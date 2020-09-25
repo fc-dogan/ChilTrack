@@ -1,68 +1,91 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# _Chiltrack_
 
-## Available Scripts
+#### _A React Redux application for parents to track thir kids' daily progress._ 
 
-In the project directory, you can run:
+#### _September 25, 2020 | Fatma C. Dogan_
 
-### `yarn start`
+## Description
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+_An application for parents who can track their kids’ behavior, daily progress, and set a goal(reward) to motivate them_
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `yarn test`
+### Component Diagram
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- <img src="tap-room diagram.jpg" width="550px" /> -->
 
-### `yarn build`
+## Specification user stories:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##### Minimum Viable Product
 
-### `yarn eject`
+* User(parent) registration (database storage)
+* User sign in and sign out (database authentication)
+* Capability create a child profile
+* Capability update(manage) child profile
+* Capability create reward
+* Capability see set rewards
+* Capability update rewards
+* Capability delete selected reward
+* Capability increase total behavior points
+* Capability decrease total behavior points
+* Capability see total behavior points
+* Capability to set up multiple children to their account
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Setup/Installation Requirements
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Node install
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+###### For macOS:
+_If Homebrew is not installed on your computer already, then install Homebrew by entering the following two commands in Terminal:_
+* $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+* $ echo 'export PATH=/usr/local/bin:$PATH' >> ~/.bash_profile
 
-## Learn More
+_Install Git with the following command:_
+* $ brew install git
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+_Next, install Node.js by entering the following command in Terminal:_
+* $ brew install node
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+###### For Windows:
+_Please visit the [Node.js website](https://nodejs.org/en/download/) for installation instructions._
 
-### Code Splitting
+#### Install this application
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+_Clone this repository via Terminal using the following commands:_
+```
+cd desktop
+git clone https://github.com/fc-dogan/Taproom-Redux
+cd Taproom-Redux
+```
 
-### Analyzing the Bundle Size
+_Next, install npm at the project's root directory, and start the server:_
+```
+npm install
+npm start
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+_If everything is correct, the localhost site should open automatically_
 
-### Making a Progressive Web App
+_View the contents of this project by opening in VSCode:_
+```
+code .
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
+## Technologies Used
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+* _React_
+* _Redux_
+* _Jest_
+* _JavaScript_
+* _WebPack_
+* _CSS_
+* _Git_
 
-### Deployment
+### License
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+*This webpage is licensed under the MIT license.*
 
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Copyright &copy; 2020 **_Fatma C. Dogan_**

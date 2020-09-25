@@ -58,8 +58,8 @@ _Please visit the [Node.js website](https://nodejs.org/en/download/) for install
 _Clone this repository via Terminal using the following commands:_
 ```
 cd desktop
-git clone https://github.com/fc-dogan/Taproom-Redux
-cd Taproom-Redux
+git clone https://github.com/fc-dogan/ChilTrack
+cd ChilTrack
 ```
 
 _Next, install npm at the project's root directory, and start the server:_

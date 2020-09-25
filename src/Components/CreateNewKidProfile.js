@@ -3,7 +3,7 @@ import React from 'react'
 function CreateNewKidProfile() {
   return (
     <div>
-      <p>create kid progile form</p>
+      <p>create kid profile form</p>
     </div>
   )
 }

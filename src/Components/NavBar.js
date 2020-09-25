@@ -9,7 +9,6 @@ function Navbar() {
       <div className="nav-wrapper">
         <Link to='/' className="brand-logo">ChilTrack</Link>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
-          <li><Link to='/dashboard' >Parent Dashboard</Link></li>
           <li><SignedInLinks/></li>
           <li><SignOutLinks /></li>
         </ul>

@@ -1,17 +1,17 @@
-### Fatma Dogan
+## Chiltrack
 
-### Chiltrack
+### By: Fatma Dogan
 
-#### Description
+### Description
 An application for parents who can track their kids’ behavior, daily progress, and set a goal(reward) to motivate them
 
-#### Use Case
+### Use Case
 
 Users are parents who are struggling to motivate kids for good behavior. Especially parents who have multiple children track their behavior is very challenging. With this application, They can set up multiple children to their account, track the behaviors individually, and can provide specific goals for each of them.
 This application will be a fun-based behavioral tracker, designed to encourage desired behaviors in children. The purpose of the application is to get the kids involved by setting their goals with parents to get them a sense of achievement.  
 Users will have a list of good and bad behavior that are factors to reach the reward(goal). When the kid reaches a specific goal, the application will alert them if they want to spend points or keep collecting to reach a higher goal.
 
-#### Minimum Viable Product
+### Minimum Viable Product
 
 * User(parent) registration (database storage)
 * User sign in and sign out (database authentication)
@@ -27,13 +27,13 @@ Users will have a list of good and bad behavior that are factors to reach the re
 *  Capability to set up multiple children to their account
 
  
-#### Tools for MVP
+### Tools for MVP
 
 * React 
 * Node.js
 * Firebase
 
-#### Additional Features
+### Additional Features
 
 *  Capability creates new behavior reason.
 *  Capability update behavior reason
@@ -43,7 +43,7 @@ Users will have a list of good and bad behavior that are factors to reach the re
 *  Account for kids to only see their report and access to manage rewards
 *  Create as a mobile application
 
-#### Tools for Additional Features
+### Tools for Additional Features
 
 * React Native
 * Canvas.js

@@ -11,11 +11,13 @@ _An application for parents who can track their kids’ behavior, daily progress
 
 ### Component Diagram
 
-<!-- <img src="tap-room diagram.jpg" width="550px" /> -->
+<img src="assets/diagram.png" width="550px" />
 
 ## Specification user stories:
 
+## Wireframes
 
+<img src="assets/wireframe.jpg" width="550px" />
 
 ##### Minimum Viable Product
 

@@ -18,7 +18,7 @@ function App() {
         <Route path='/signup' component={SignUp} />
         <Route path='/dashboard' component={Dashboard} />
         <Route path='/create' component={CreateNewKidProfile} />
-        <Route path='/' component={ProfileControl} />
+        {/* <Route path='/' component={ProfileControl} /> */}
       </Switch>
     </div>
   </BrowserRouter>

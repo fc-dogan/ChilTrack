@@ -2,6 +2,8 @@ import React from 'react';
 
 import KidList from './KidList';
 import { Link } from 'react-router-dom'
+// import { connect } from 'react-redux';
+// import { withFirestore, isLoaded } from 'react-redux-firebase';
 
 class Dashboard extends React.Component {
   render() {
@@ -15,5 +17,13 @@ class Dashboard extends React.Component {
     )
   }
 }
+// const mapStateToProps = state =>{
+//   return {
+//     // auth: state.firebase.auth,
+//     // kidList: kidListReducer,
+
+//   }
+// }
+// Dashboard = connect(mapStateToProps)(Dashboard);
 
 export default Dashboard

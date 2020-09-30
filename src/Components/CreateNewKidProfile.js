@@ -1,20 +1,28 @@
 import React from 'react';
 import { useFirestore } from 'react-redux-firebase';
+import { useDispatch } from 'react-redux'
+import {createNewKid} from '../actions/kidsActions'
 
 function CreateNewKidProfile() {
 
   const firestore = useFirestore();
-
+  const dispatch = useDispatch();
   function addEventToFirestore(event){
     event.preventDefault();
-
-    return firestore.collection('kids').add(
+    dispatch(createNewKid(
       {
         name: event.target.name.value,
         totalPoint: 0,
         createdTime: firestore.FieldValue.serverTimestamp()
       }
-    );
+    ))
+    // return firestore.collection('kids').add(
+    //   {
+    //     name: event.target.name.value,
+    //     totalPoint: 0,
+    //     createdTime: firestore.FieldValue.serverTimestamp()
+    //   }
+    // );
   }
 
   return (

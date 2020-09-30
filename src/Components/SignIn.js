@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { signIn } from '../actions/authActions'
 
 class SignIn extends React.Component {
   state = {
@@ -13,7 +15,7 @@ class SignIn extends React.Component {
   }
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state)
+    this.props.signIn(this.state)
   }
 
   render() {
@@ -41,4 +43,17 @@ class SignIn extends React.Component {
   }
 }
 
-export default SignIn
+const mapStateToProps = (state) => {
+  return{
+    authError: state.auth.authError,
+    auth: state.firebase.auth
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signIn: (creds) => dispatch(signIn(creds))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn)

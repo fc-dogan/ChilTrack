@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom'
 
 function Kid(props) {
   return (
-    <Link to={`/details/${props.id}`} key={props.id}> 
+    <Link to={{
+      pathname:`/details/${props.id}`,
+      props: { id: props.id}
+      }} key={props.id}> 
       <div >
         <div className="card z-depth-0 event">
 

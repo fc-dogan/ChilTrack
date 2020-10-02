@@ -2,38 +2,12 @@ import React, { useState } from 'react'
 import { useFirestore} from 'react-redux-firebase';
 import { useDispatch } from 'react-redux'
 import { createNewGoal } from '../actions/goalsActions';
+import { Link, useHistory } from 'react-router-dom';
 
 function CreateNewGoal(props) { 
-  // const  [reward, setReward] = useState("")
-  // const  [rewardPoint, setRewardPoint] = useState(0)
-  // const  [newgoal, setnewgoal] = useState({})
-
-  // const firestore = useFirestore();
-
-  // let kid = props.location.selectedKid.kid;
-  let id = props.location.selectedKid.id;
-
-  // console.log(kid.goals)
-
-  // function handleGoalFormSubmission(event){
-  //   event.preventDefault();
-  //   console.log(event.target.reward.value)
-  //   setnewgoal({
-  //       reward: event.target.reward.value,
-  //       rewardPoint: event.target.rewardPoint.value
-  //     })
-  //   // setnewgoal(event.target.reward.value)
-  //   console.log("newgoal" + newgoal);
-  //   let propertiesToUpdate = {
-  //           goals: [ ...kid.goals, newgoal]
-  //         };
-  //   return firestore.update({collection: 'kids', doc: id}, propertiesToUpdate);
-  // }
-
-  
-  // const history = useHistory()
-  const firestore = useFirestore();
+  const history = useHistory();
   const dispatch = useDispatch();
+  let id = props.location.selectedKid.id;
   
   function addGoalToFirestore(event){
     event.preventDefault();
@@ -44,9 +18,8 @@ function CreateNewGoal(props) {
       },
       id
     ))
-    // history.push("/dashboard")
+    history.push("/dashboard")
   }
-
 
   return (
     <div className="container" onSubmit={addGoalToFirestore}>

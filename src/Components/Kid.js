@@ -10,13 +10,10 @@ function Kid(props) {
     { collection: 'goals' }
   ]);
 
-  // let goals = props.goals.length < 1 ? `${props.name} has no goals setup` : props.goals.reward
-  // console.log(props.goals)
   const goals = useSelector(state => state.firestore.ordered.goals);
   console.log(goals)
   console.log(props.id)
   // const oneGoal = goals[props.id] === undefined ? "yok" : goals[props.id]
-  // console.log( oneGoal)
   let goalsForSelectedKid;
   if (isLoaded(goals)) {
       goalsForSelectedKid = goals.filter(goal => {
@@ -36,7 +33,9 @@ function Kid(props) {
           <p>Name: {props.name} </p>
           <p>Total Point: <em>{props.totalPoint}</em></p>
           <p>Goals: {goalsForSelectedKid.map( goal =>{
-             return <p>{goal.reward }</p>
+             return (
+               <p>{goal.reward } = {goal.rewardPoint} points</p>
+             )
           })}</p>
         </div>
         </div>

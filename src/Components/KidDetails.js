@@ -5,18 +5,18 @@ import { Link, useHistory } from 'react-router-dom';
 import CreateNewGoal from './CreateNewGoal'
 
 function KidDetails(props) {
-  const history = useHistory()
-  const id = props.location.props.id
+  const history = useHistory();
+  const id = props.location.props.id;
   const kids = useSelector(state => state.firestore.data.kids);
   const kid = kids[id]
 
- console.log('kid ' + kid.name)
  const firestore = useFirestore();
   
  const handleDeletingKidsProfile =() =>{
     firestore.delete({collection: 'kids', doc: id });
     history.push('/dashboard')
  }
+ 
   return (
     <div className="container section kid-details">
     <div className="card z-depth-0">

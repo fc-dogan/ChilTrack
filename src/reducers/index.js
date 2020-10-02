@@ -1,12 +1,12 @@
 import authReducer from './auth-reducer';
-import kidListReducer from './kidList-reducer'
+import kidsReducer from './kids-reducer'
 import { combineReducers } from 'redux';
 import { firestoreReducer } from 'redux-firestore';
 import { firebaseReducer } from 'react-redux-firebase';
 
 const rootReducer = combineReducers({
   auth: authReducer,
-  // kidList: kidListReducer,
+  kid: kidsReducer,
   firestore: firestoreReducer,
   firebase: firebaseReducer
 })

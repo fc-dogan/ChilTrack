@@ -37,7 +37,8 @@ export const incrementKidsPoints =  (id) =>{
       
     firestore.collection('kids').doc(id).update({
       totalPoint: kid.totalPoint + 1
-    }).then(() => {
+    })
+    .then(() => {
       dispatch({ type: 'INCREMENT_SUCCESS' });
     }).catch(err => {
       dispatch({ type: 'INCREMENT_ERROR' }, err);

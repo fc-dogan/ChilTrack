@@ -2,10 +2,17 @@ import React from 'react'
 import PropTypes from "prop-types";
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-
+import { useDispatch } from 'react-redux'
+import {incrementKidsPoints } from '../actions/kidsActions'
 
 function Kid(props) {
+  const dispatch = useDispatch();
+  const increasePoint = () => {
+    dispatch(incrementKidsPoints(props.id))
+  }
     return (
+      <React.Fragment>
+
       <Link to={{
         pathname:`/details/${props.id}`,
         props: { id: props.id}
@@ -17,6 +24,10 @@ function Kid(props) {
           </div>
           </div>
       </Link>
+          <div className="card-action pink lighten-4">
+            <p onClick={increasePoint}>artir</p>
+          </div>
+      </React.Fragment>
     ) 
 }
 

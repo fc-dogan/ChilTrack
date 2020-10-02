@@ -5,6 +5,7 @@ import SignIn from './Components/SignIn'
 import SignUp from './Components/SignUp';
 import Dashboard from './Components/Dashboard'
 import CreateNewKidProfile from './Components/CreateNewKidProfile';
+import KidDetails from './Components/KidDetails'
 import ProfileControl from './Components/ProfileControl';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/signup' component={SignUp} />
         <Route path='/dashboard' component={Dashboard} />
         <Route path='/create' component={CreateNewKidProfile} />
+        <Route path='/details/:id' component={KidDetails} />
         {/* <Route path='/' component={ProfileControl} /> */}
       </Switch>
     </div>

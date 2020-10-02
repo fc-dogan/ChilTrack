@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import KidList from './KidList';
+
 import { Link } from 'react-router-dom'
 // import { connect } from 'react-redux';
 // import { withFirestore, isLoaded } from 'react-redux-firebase';

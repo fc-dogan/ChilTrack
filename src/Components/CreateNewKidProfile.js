@@ -8,12 +8,14 @@ function CreateNewKidProfile() {
   const history = useHistory()
   const firestore = useFirestore();
   const dispatch = useDispatch();
+  
   function addKidToFirestore(event){
     event.preventDefault();
     dispatch(createNewKid(
       {
         name: event.target.name.value,
         totalPoint: 0,
+        goals: [],
         createdTime: firestore.FieldValue.serverTimestamp()
       }
     ))

@@ -25,6 +25,9 @@ function KidDetails(props) {
       <div className="card-action grey lighten-4 grey-text">
         <div>Total Point {kid.totalPoint} </div>
       </div>
+      <div className="input-field">
+        <button className="btn pink lighten-1">Create a new goal</button>
+      </div>
     <div className="card-footer">
       <button onClick={handleDeletingKidsProfile}>Delete </button>
     </div>

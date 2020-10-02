@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import { Link } from 'react-router-dom'
 
 function Kid(props) {
+
+  let goals = props.goals.length < 1 ? `${props.name} has no goals setup` : props.goals 
+  console.log(props.goals)
   return (
     <Link to={{
       pathname:`/details/${props.id}`,
@@ -13,8 +16,8 @@ function Kid(props) {
 
         <div className="card-action grey lighten-4 grey-text">
           <p>Name: {props.name} </p>
-          {/* <p>{props.createdTime} </p> */}
           <p>Total Point: <em>{props.totalPoint}</em></p>
+          <p>Goals: {goals}</p>
         </div>
         </div>
       </div>
@@ -25,7 +28,6 @@ function Kid(props) {
 
 Kid.propTypes = {
   name: PropTypes.string,
-  // createdTime: PropTypes.string,
   totalPoint: PropTypes.number,
   id: PropTypes.string
 }

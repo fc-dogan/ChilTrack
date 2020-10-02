@@ -23,8 +23,8 @@ function KidList(props) {
           console.log(kid.parentId)
           return <Kid
             name={kid.name}
-            // createdTime={kid.createdTime}
             totalPoint={kid.totalPoint}
+            goals={kid.goals}
             id={kid.id}
             key={kid.id}/>
         })}

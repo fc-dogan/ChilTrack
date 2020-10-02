@@ -80,8 +80,9 @@ code .
 
 * _React_
 * _Redux_
+* _Node.js_
+* Firebase
 * _Jest_
-* _JavaScript_
 * _WebPack_
 * _CSS_
 * _Git_

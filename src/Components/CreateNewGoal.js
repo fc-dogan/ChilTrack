@@ -14,7 +14,7 @@ function CreateNewGoal(props) {
     dispatch(createNewGoal(
       {
         reward: event.target.reward.value,
-        rewardPoint: event.target.rewardPoint.value,
+        rewardPoint: parseInt(event.target.rewardPoint.value),
       },
       id
     ))

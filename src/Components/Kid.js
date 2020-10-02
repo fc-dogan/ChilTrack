@@ -2,54 +2,22 @@ import React from 'react'
 import PropTypes from "prop-types";
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase'
+
 
 function Kid(props) {
-
-  useFirestoreConnect([
-    { collection: 'goals' }
-  ]);
-
-  const goals = useSelector(state => state.firestore.ordered.goals);
-  console.log(goals)
-  console.log(props.id)
-  // const oneGoal = goals[props.id] === undefined ? "yok" : goals[props.id]
-  let goalsForSelectedKid;
-  if (isLoaded(goals)) {
-      goalsForSelectedKid = goals.filter(goal => {
-        return props.id === goal.kidId
-      })
-      console.log(goalsForSelectedKid[0])
-  
-  return (
-    <Link to={{
-      pathname:`/details/${props.id}`,
-      props: { id: props.id}
-      }} key={props.id}> 
-      <div >
-        <div className="card z-depth-0 event">
-
-        <div className="card-action grey lighten-4 grey-text">
-          <p>Name: {props.name} </p>
-          <p>Total Point: <em>{props.totalPoint}</em></p>
-          <p>Goals: {goalsForSelectedKid.map( goal =>{
-             return (
-               <p>{goal.reward } = {goal.rewardPoint} points</p>
-             )
-          })}</p>
-        </div>
-        </div>
-      </div>
-    </Link>
-  
-  )
-  } else {
     return (
-      <React.Fragment>
-        <h3>Loading...</h3>
-      </React.Fragment>
-    )
-  }
+      <Link to={{
+        pathname:`/details/${props.id}`,
+        props: { id: props.id}
+        }} key={props.id}>  
+          <div className="card z-depth-0 event">
+          <div className="card-action grey lighten-4 grey-text">
+            <p>Name: {props.name} </p>
+            <p>Total Point: <em>{props.totalPoint}</em></p>
+          </div>
+          </div>
+      </Link>
+    ) 
 }
 
 Kid.propTypes = {

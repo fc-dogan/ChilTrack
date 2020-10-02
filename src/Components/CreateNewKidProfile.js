@@ -2,12 +2,13 @@ import React from 'react';
 import { useFirestore } from 'react-redux-firebase';
 import { useDispatch } from 'react-redux'
 import {createNewKid} from '../actions/kidsActions'
+import { useHistory } from 'react-router-dom';
 
 function CreateNewKidProfile() {
-
+  const history = useHistory()
   const firestore = useFirestore();
   const dispatch = useDispatch();
-  function addEventToFirestore(event){
+  function addKidToFirestore(event){
     event.preventDefault();
     dispatch(createNewKid(
       {
@@ -16,18 +17,12 @@ function CreateNewKidProfile() {
         createdTime: firestore.FieldValue.serverTimestamp()
       }
     ))
-    // return firestore.collection('kids').add(
-    //   {
-    //     name: event.target.name.value,
-    //     totalPoint: 0,
-    //     createdTime: firestore.FieldValue.serverTimestamp()
-    //   }
-    // );
+    history.push("/dashboard")
   }
 
   return (
     <div className="container">
-    <form className="white" onSubmit={addEventToFirestore}>
+    <form className="white" onSubmit={addKidToFirestore}>
       <h5 className="grey-text text-darken-3">Add a new Kid Profile</h5>
       <div className="input-field">
         <input type="text" name='name' />

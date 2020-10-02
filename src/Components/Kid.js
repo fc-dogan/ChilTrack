@@ -10,7 +10,7 @@ function Kid(props) {
         pathname:`/details/${props.id}`,
         props: { id: props.id}
         }} key={props.id}>  
-          <div className="card z-depth-0 event">
+          <div className="card z-depth-0 ">
           <div className="card-action grey lighten-4 grey-text">
             <p>Name: {props.name} </p>
             <p>Total Point: <em>{props.totalPoint}</em></p>

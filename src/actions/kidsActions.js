@@ -27,3 +27,25 @@ export const createNewKid = (kid) => {
 //     })
 //   }  
 // }
+
+export const incrementKidsPoints =  (id) =>{
+  return (dispatch, getState, {getFirestore}) => {
+    const firestore = getFirestore();
+    const kid = getState().firestore.data.kids[id];
+  
+    // const kidId = Object.keys(kid)[0];
+      
+    firestore.collection('kids').doc(id).update({
+      totalPoint: kid.totalPoint + 1
+    }).then(() => {
+      dispatch({ type: 'INCREMENT_SUCCESS' });
+    }).catch(err => {
+      dispatch({ type: 'INCREMENT_ERROR' }, err);
+    });
+  }
+}  
+
+// const increasePoint = () => {
+//     const increasedPoint = props.totalPoint + 1
+//     return 
+//   }

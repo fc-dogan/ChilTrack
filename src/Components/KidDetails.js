@@ -40,20 +40,20 @@ console.log(id)
         </div>
         <div className="card-action grey lighten-4 grey-text">
           <p>Total Point {kid.totalPoint} </p>
+          <h5>Goals:</h5>
           {goalsForSelectedKid.map( goal =>{
               return (
-                <p>Goals: {goal.reward } = {goal.rewardPoint} points</p>
+                <p> {goal.reward } = {goal.rewardPoint} points</p>
               )
             })}
         </div>
         <div className="input-field">
-        
           <Link to={{ pathname: "/creategoal", selectedKid: { kid: kid, id: id} }} key={id} >
           <button className="btn pink lighten-1">Create a new goal</button>
           </Link>
         </div>
       <div className="card-footer">
-        <button onClick={handleDeletingKidsProfile}>Delete </button>
+        <button className="btn grey lighten-1" onClick={handleDeletingKidsProfile}>Delete </button>
       </div>
       </div>
     </div>

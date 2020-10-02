@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function Kid(props) {
 
-  let goals = props.goals.length < 1 ? `${props.name} has no goals setup` : props.goals 
+  let goals = props.goals.length < 1 ? `${props.name} has no goals setup` : props.goals.reward
   console.log(props.goals)
   return (
     <Link to={{

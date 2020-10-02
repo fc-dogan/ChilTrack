@@ -1,7 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useFirestore} from 'react-redux-firebase';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import CreateNewGoal from './CreateNewGoal'
 
 function KidDetails(props) {
   const history = useHistory()
@@ -26,7 +27,10 @@ function KidDetails(props) {
         <div>Total Point {kid.totalPoint} </div>
       </div>
       <div className="input-field">
+      
+        <Link to={{ pathname: "/creategoal", selectedKid: { kid: kid, id: id} }}>
         <button className="btn pink lighten-1">Create a new goal</button>
+        </Link>
       </div>
     <div className="card-footer">
       <button onClick={handleDeletingKidsProfile}>Delete </button>

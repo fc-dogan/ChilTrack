@@ -7,6 +7,7 @@ import Dashboard from './Components/Dashboard'
 import CreateNewKidProfile from './Components/CreateNewKidProfile';
 import KidDetails from './Components/KidDetails'
 import ProfileControl from './Components/ProfileControl';
+import CreateNewGoal from './Components/CreateNewGoal';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/dashboard' component={Dashboard} />
         <Route path='/create' component={CreateNewKidProfile} />
         <Route path='/details/:id' component={KidDetails} />
+        <Route path='/creategoal' component={CreateNewGoal} />
         {/* <Route path='/' component={ProfileControl} /> */}
       </Switch>
     </div>

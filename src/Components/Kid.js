@@ -25,7 +25,7 @@ function Kid(props) {
           </div>
       </Link>
           <div className="card-action pink lighten-4">
-            <p onClick={increasePoint}>artir</p>
+            <button onClick={increasePoint}>artir</button>
           </div>
       </React.Fragment>
     ) 

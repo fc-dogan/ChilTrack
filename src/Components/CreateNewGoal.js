@@ -1,34 +1,55 @@
 import React, { useState } from 'react'
 import { useFirestore} from 'react-redux-firebase';
+import { useDispatch } from 'react-redux'
+import { createNewGoal } from '../actions/goalsActions';
 
 function CreateNewGoal(props) { 
   // const  [reward, setReward] = useState("")
   // const  [rewardPoint, setRewardPoint] = useState(0)
-  const  [newgoal, setnewgoal] = useState()
+  // const  [newgoal, setnewgoal] = useState({})
 
-  const firestore = useFirestore();
+  // const firestore = useFirestore();
 
-  let kid = props.location.selectedKid.kid;
+  // let kid = props.location.selectedKid.kid;
   let id = props.location.selectedKid.id;
 
-  console.log(kid.goals)
+  // console.log(kid.goals)
 
-  function handleGoalFormSubmission(event){
+  // function handleGoalFormSubmission(event){
+  //   event.preventDefault();
+  //   console.log(event.target.reward.value)
+  //   setnewgoal({
+  //       reward: event.target.reward.value,
+  //       rewardPoint: event.target.rewardPoint.value
+  //     })
+  //   // setnewgoal(event.target.reward.value)
+  //   console.log("newgoal" + newgoal);
+  //   let propertiesToUpdate = {
+  //           goals: [ ...kid.goals, newgoal]
+  //         };
+  //   return firestore.update({collection: 'kids', doc: id}, propertiesToUpdate);
+  // }
+
+  
+  // const history = useHistory()
+  const firestore = useFirestore();
+  const dispatch = useDispatch();
+  
+  function addGoalToFirestore(event){
     event.preventDefault();
-    console.log(event.target.reward.value)
-    setnewgoal({
+    dispatch(createNewGoal(
+      {
         reward: event.target.reward.value,
-        rewardPoint: event.target.rewardPoint.value
-      })
-    console.log("newgoal" + newgoal);
-    let propertiesToUpdate = {
-            goals: [ ...kid.goals, newgoal]
-          };
-    return firestore.update({collection: 'kids', doc:id}, propertiesToUpdate);
+        rewardPoint: event.target.rewardPoint.value,
+      },
+      id
+    ))
+    // history.push("/dashboard")
   }
 
+
   return (
-    <div className="container" onSubmit={handleGoalFormSubmission}>
+    <div className="container" onSubmit={addGoalToFirestore}>
     <form className="white" >
       <h5 className="grey-text text-darken-3">Add a new Goal</h5>
       <div className="input-field">

@@ -12,7 +12,7 @@ function BadBehaviorList(props) {
   return (
     <React.Fragment>
       {badbehaviorList.map( badbehavior => {
-       return  <a class="waves-effect waves-light btn-large" >{badbehavior}</a>
+       return  <a class="waves-effect waves-light btn-large" onClick={() => props.onDecreasePoint()}>{badbehavior}</a>
       })}
     </React.Fragment>
   )

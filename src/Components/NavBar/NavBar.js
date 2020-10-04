@@ -3,14 +3,16 @@ import { Link } from 'react-router-dom';
 import SignedInLinks from './SignedInLinks';
 import SignedOutLinks from './SignedOutLinks';
 import { connect } from 'react-redux'
+// import {Navbar, Nav} from 'react-bootstrap'
 
-const Navbar = (props) => {
+const NavBar = (props) => {
   const { auth } = props;
   console.log(auth);
   const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />;
 
   return (
-    <React.Fragment >
+
+   <React.Fragment >
        <nav >
       <div className="nav-wrapper">
       {/* <a href="#!" class="brand-logo">Logo</a> */}
@@ -37,4 +39,18 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(Navbar)
+export default connect(mapStateToProps)(NavBar)
+
+
+
+// <Navbar collapseOnSelect fixed="top" expand="lg" >
+   
+{/* <Navbar.Brand  href='/'> Chiltrack</Navbar.Brand>
+<Navbar.Toggle aria-controls='responsive-navbar-nav' />
+<Navbar.Collapse id='responsive-navbar-nav'>
+  <Nav className='ml-auto'>
+    {links}
+  </Nav>
+</Navbar.Collapse>
+
+</Navbar> */}

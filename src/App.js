@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Navbar from './Components/NavBar/NavBar';
+import NavBar from './Components/NavBar/NavBar';
 import SignIn from './Components/SignIn'
 import SignUp from './Components/SignUp';
 import Dashboard from './Components/Dashboard'
@@ -8,12 +8,13 @@ import CreateNewKidProfile from './Components/CreateNewKidProfile';
 import KidDetails from './Components/KidDetails'
 import ProfileControl from './Components/ProfileControl';
 import CreateNewGoal from './Components/CreateNewGoal';
+import GoodBehaviorList from './Components/BehaviorList/GoodBehaviorList';
 
 function App() {
   return (
     <BrowserRouter>
     <div className="App">
-      <Navbar />
+      <NavBar />
       <Switch>
         <Route exact path='/' />
         <Route path='/signin' component={SignIn} />
@@ -22,6 +23,7 @@ function App() {
         <Route path='/create' component={CreateNewKidProfile} />
         <Route path='/details/:id' component={KidDetails} />
         <Route path='/creategoal' component={CreateNewGoal} />
+        <Route path='/goodbehaviors' component={GoodBehaviorList} />
         {/* <Route path='/' component={ProfileControl} /> */}
       </Switch>
     </div>

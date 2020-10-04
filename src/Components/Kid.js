@@ -24,19 +24,19 @@ function Kid(props) {
         pathname:`/details/${props.id}`,
         props: { id: props.id}
         }} key={props.id}>  
-          <div className="card-action grey lighten-4 grey-text">
+          <div className="card-panel hoverable grey lighten-4 grey-text">
             <p>Name: {props.name} </p>
             <p>Total Point: <em>{props.totalPoint}</em></p>
           </div>
       </Link>
           <div className="card-action ">
-            <button onClick={increasePoint} style={{ color: '#F4A261' }}>
+            <p className='btn-floating btn-large waves-effect waves-light yellow darken-2'  onClick={increasePoint} >
               <Icon size={30} icon={checkmark}/>
-            </button>
+            </p>
             {/* <button onClick={increasePoint}>increase point</button> */}
-            <button onClick={decreasePoint} style={{ color: '#F4A261' }}>
+            <p class="waves-effect waves-teal btn-flat" onClick={decreasePoint} style={{ color: '#F4A261' }}>
               <Icon size={30} icon={close} />
-            </button>
+            </p>
           </div>
           </div>
       </React.Fragment>

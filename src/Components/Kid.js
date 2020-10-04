@@ -12,7 +12,7 @@ import BadBehaviorList from './BehaviorList/BadBehaviorList'
 import M from "materialize-css";
 
 function Kid(props) {
-
+ const { name, totalPoint, id } = props;
   useEffect(() => {
       // Auto initialize all the things!
     M.AutoInit();
@@ -20,59 +20,45 @@ function Kid(props) {
   const dispatch = useDispatch();
  
   const increasePoint = () => {
-    dispatch(incrementKidsPoints(props.id))
+    dispatch(incrementKidsPoints(id))
   }
   const decreasePoint = () => {
-    dispatch(decrementKidsPoints(props.id))
+    dispatch(decrementKidsPoints(id))
   }
     return (
-      <React.Fragment>
-        <div className="card z-depth-0 ">
+      <React.Fragment>  
+           <div class="card">
+            <div class="card-content">
+              <Link to={{
+                pathname:`/details/${id}`,
+                props: { id: id}
+                }} key={id}>  
+                  <div className="card-panel hoverable grey lighten-4 grey-text">
+                    <p>Name: {name} </p>
+                    <p>Total Point: <em>{totalPoint}</em></p>
+                  </div>
+              </Link>
+            </div>
+            <div class="card-tabs">
+              <ul class="tabs ">
+                <li class="tab"><a href={`#${name}-empty`} class="active"></a></li>
+                
+                <li class="tab"><a href={`#${name}-goodList`}><i className="material-icons right" id="good" style={{ color: '#F4A261' }}>done_outline</i></a></li>
 
-      <Link to={{
-        pathname:`/details/${props.id}`,
-        props: { id: props.id}
-        }} key={props.id}>  
-          <div className="card-panel hoverable grey lighten-4 grey-text">
-            <p>Name: {props.name} </p>
-            <p>Total Point: <em>{props.totalPoint}</em></p>
+                <li class="tab"><a href={`#${name}-badList`}><i className="material-icons right" style={{ color: '#F4A261' }}>thumb_down</i></a></li>
+
+              </ul>
+            </div>
+            <div class="card-content grey lighten-4">
+              <div id={`${name}-empty`}></div>
+              <div id={`${name}-goodList`}>
+                <GoodBehaviorList onIncreasePoint={increasePoint} />
+              </div>
+              <div id={`${name}-badList`}>
+                <BadBehaviorList onDecreasePoint={decreasePoint} />
+              </div>
+            </div>
           </div>
-      </Link>
-          {/* <div className="card-action "> */}
-            {/* <p className='btn-floating btn-large waves-effect waves-light yellow darken-2'  onClick={increasePoint} >
-              <Icon size={30} icon={checkmark}/>
-            </p> */}
-
-            <ul class="collapsible">
-              <li>
-                <div class="collapsible-header">
-                  <p className='btn-floating btn-large waves-effect waves-light yellow darken-2'  >
-                    <Icon size={30} icon={checkmark}/>
-                  </p>
-                </div>
-                <div class="collapsible-body"><GoodBehaviorList onIncreasePoint={increasePoint} /></div>
-              </li>
-              <li>
-                <div class="collapsible-header">
-                  <p class="waves-effect waves-teal btn-flat" style={{ color: '#F4A261' }}>
-                    <Icon size={30} icon={close} />
-                  </p>
-                </div>
-                <div class="collapsible-body"><BadBehaviorList onDecreasePoint={decreasePoint} /></div>
-              </li>
-              
-            </ul>
-
-
-
-
-{/* 
-            <p class="waves-effect waves-teal btn-flat" onClick={decreasePoint} style={{ color: '#F4A261' }}>
-              <Icon size={30} icon={close} />
-            </p>
-          </div> */}
-          </div>
-         
       </React.Fragment>
     ) 
 }

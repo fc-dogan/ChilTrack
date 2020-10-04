@@ -8,6 +8,7 @@ import { Icon } from 'react-icons-kit'
 import {checkmark } from 'react-icons-kit/icomoon/checkmark'
 import {close} from 'react-icons-kit/ionicons/close'
 import GoodBehaviorList from './BehaviorList/GoodBehaviorList'
+import BadBehaviorList from './BehaviorList/BadBehaviorList'
 import M from "materialize-css";
 
 function Kid(props) {
@@ -50,6 +51,14 @@ function Kid(props) {
                   </p>
                 </div>
                 <div class="collapsible-body"><GoodBehaviorList onIncreasePoint={increasePoint} /></div>
+              </li>
+              <li>
+                <div class="collapsible-header">
+                  <p class="waves-effect waves-teal btn-flat" style={{ color: '#F4A261' }}>
+                    <Icon size={30} icon={close} />
+                  </p>
+                </div>
+                <div class="collapsible-body"><BadBehaviorList  /></div>
               </li>
               
             </ul>

@@ -1,5 +1,5 @@
 const initState = {
-  authError: null
+  pointError: null
 }
 
 const kidsReducer = (state = initState, action) => {
@@ -8,13 +8,26 @@ const kidsReducer = (state = initState, action) => {
       console.log('increment success')
       return {
         ...state,
-        authError: null
+        pointError: null
       }
     case 'INCREMENT_ERROR':
       console.log('increment error')
       return {
         ...state,
-        authError: action.err.message
+        pointError: action.err.message
+      }
+
+    case 'DECREMENT_SUCCESS':
+      console.log('decrement success')
+      return {
+        ...state,
+        pointError: null
+      }
+    case 'DECREMENT_ERROR':
+      console.log('decrement error')
+      return {
+        ...state,
+        pointError: action.err.message
       }
 
     default:

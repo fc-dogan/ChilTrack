@@ -58,7 +58,7 @@ function Kid(props) {
                     <Icon size={30} icon={close} />
                   </p>
                 </div>
-                <div class="collapsible-body"><BadBehaviorList  /></div>
+                <div class="collapsible-body"><BadBehaviorList onDecreasePoint={decreasePoint} /></div>
               </li>
               
             </ul>

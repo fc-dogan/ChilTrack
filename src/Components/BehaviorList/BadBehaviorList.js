@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const badbehaviorList= [
   "Lying",
@@ -7,7 +8,7 @@ const badbehaviorList= [
 ]
 
 
-function BadBehaviorList() {
+function BadBehaviorList(props) {
   return (
     <React.Fragment>
       {badbehaviorList.map( badbehavior => {
@@ -15,6 +16,10 @@ function BadBehaviorList() {
       })}
     </React.Fragment>
   )
+}
+
+BadBehaviorList.propTypes = {
+  onDecreasePoint: PropTypes.func
 }
 
 export default BadBehaviorList

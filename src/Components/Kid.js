@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import {incrementKidsPoints, decrementKidsPoints } from '../actions/kidsActions'
+import { Icon } from 'react-icons-kit'
+import {checkmark} from 'react-icons-kit/icomoon/checkmark'
 
 function Kid(props) {
   const dispatch = useDispatch();
@@ -27,8 +29,11 @@ function Kid(props) {
           </div>
           </div>
       </Link>
-          <div className="card-action pink lighten-4">
-            <button onClick={increasePoint}>increase point</button>
+          <div className="card-action ">
+            <button onClick={increasePoint} style={{ color: '#F4A261' }}>
+              <Icon size={45} icon={checkmark}/>
+            </button>
+            {/* <button onClick={increasePoint}>increase point</button> */}
             <button onClick={decreasePoint}>decrease point</button>
           </div>
       </React.Fragment>

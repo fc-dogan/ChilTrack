@@ -24,6 +24,7 @@ function KidList(props) {
         {kidsBelongToParent.map((kid) => {
           console.log(kid.parentId)
           return <Kid
+            // whenKidClicked = {props.onKidSelection}
             name={kid.name}
             totalPoint={kid.totalPoint}
             id={kid.id}
@@ -42,7 +43,7 @@ function KidList(props) {
 
 KidList.propTypes = {
   parentId: PropTypes.string,
-  onKidSelection: PropTypes.func
+  // onKidSelection: PropTypes.func
 }
 
 export default KidList

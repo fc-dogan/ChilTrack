@@ -3,11 +3,13 @@ import { connect } from 'react-redux'
 import KidList from './KidList';
 import { Link } from 'react-router-dom'
 
+
 class Dashboard extends React.Component {
   
-  handleChangingSelectedKid = (selectedKid) => {
-    const action = selectKid(selectedKid);
-    dispatch(action);
+  handleChangingSelectedKid = (id) => {
+    console.log("reach the id" + {id})
+    // const action = selectKid(selectedKid);
+    // dispatch(action);
   }
 
   render() {

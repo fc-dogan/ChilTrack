@@ -6,16 +6,18 @@ import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import {incrementKidsPoints, decrementKidsPoints } from '../actions/kidsActions'
+import {selectedKid} from '../actions/selectedKidActions'
 import { Icon } from 'react-icons-kit'
 import {checkmark } from 'react-icons-kit/icomoon/checkmark'
 import {close} from 'react-icons-kit/ionicons/close'
 import GoodBehaviorList from './BehaviorList/GoodBehaviorList'
 import BadBehaviorList from './BehaviorList/BadBehaviorList'
 import M from "materialize-css";
+import { propTypes } from 'react-bootstrap/esm/Image';
 
 function Kid(props) {
   const firestore = useFirestore();
- const { name, totalPoint, id } = props;
+ const { name, totalPoint, id, whenKidClicked } = props;
   useEffect(() => {
       // Auto initialize all the things!
     M.AutoInit();
@@ -29,6 +31,10 @@ function Kid(props) {
     dispatch(decrementKidsPoints(id))
   }
 
+  const selectKid = () => {
+    dispatch(selectedKid(id, name, totalPoint))
+  }
+
   useFirestoreConnect([
     { collection: 'goals' }
   ]);
@@ -40,7 +46,8 @@ function Kid(props) {
               <Link to={{
                 pathname:`/details/${id}`,
                 props: { id: id}
-                }} key={id}>  
+                }} key={id}
+                onClick={selectKid}>  
                   <div className="card-panel hoverable grey lighten-4 grey-text">
                     <p>Name: {name} </p>
                     <p>Total Point: <em>{totalPoint}</em></p>
@@ -74,7 +81,8 @@ function Kid(props) {
 Kid.propTypes = {
   name: PropTypes.string,
   totalPoint: PropTypes.number,
-  id: PropTypes.string
+  id: PropTypes.string,
+  // whenKidClicked: propTypes.func
 }
 
 export default Kid

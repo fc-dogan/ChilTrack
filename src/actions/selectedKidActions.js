@@ -1,5 +1,5 @@
-export const selectedKid = (kidData) => {
-  const { name, totalPoint, id } = kidData;
+export const selectedKid = (id,  name, totalPoint) => {
+  // const { name, totalPoint, id } = kidData;
   return {
     type: "SELECTED_KID",
     name: name,

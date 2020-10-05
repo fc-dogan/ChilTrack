@@ -1,9 +1,10 @@
 
 
-export default (state =null, action) => {
+const  selectedKidReducer = (state =null, action) => {
   const { name, totalPoint, id } = action
     switch(action.type){
       case 'SELECTED_KID':
+        console.log("select kid" + name + totalPoint + id)
       const newState = {
         name: name,
         totalPoint: totalPoint,
@@ -14,3 +15,5 @@ export default (state =null, action) => {
      return state;
   }
 }
+
+export default selectedKidReducer 

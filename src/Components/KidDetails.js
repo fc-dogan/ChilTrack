@@ -4,6 +4,7 @@ import { useFirestore} from 'react-redux-firebase';
 import { Link, useHistory } from 'react-router-dom';
 import CreateNewGoal from './CreateNewGoal'
 import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase'
+import Goals from './Goals'
 
 function KidDetails(props) {
   const history = useHistory();
@@ -43,7 +44,12 @@ console.log(id)
           <h5>Goals:</h5>
           {goalsForSelectedKid.map( goal =>{
               return (
-                <p> {goal.reward } = {goal.rewardPoint} points</p>
+                <Goals
+                  reward={goal.reward}
+                  rewardPoint={goal.rewardPoint}
+                  key={goal.id}
+                />
+                // <p> {goal.reward } = {goal.rewardPoint} points</p>
               )
             })}
         </div>

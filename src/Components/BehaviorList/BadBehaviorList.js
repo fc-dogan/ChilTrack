@@ -11,9 +11,18 @@ const badbehaviorList= [
 function BadBehaviorList(props) {
   return (
     <React.Fragment>
-      {badbehaviorList.map( badbehavior => {
-       return  <a class="waves-effect waves-light btn-large" onClick={() => props.onDecreasePoint()}>{badbehavior}</a>
-      })}
+      <div className="container">
+        {badbehaviorList.map( badbehavior => {
+        return ( 
+          <div>
+            <div className="divider"></div>
+            <div className="section">
+              <a class="waves-effect waves-light btn-large" onClick={() => props.onDecreasePoint()}>{badbehavior}</a>
+            </div>
+          </div>
+        )
+        })}
+      </div>
     </React.Fragment>
   )
 }

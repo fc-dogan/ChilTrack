@@ -15,7 +15,6 @@ function CreateNewKidProfile() {
       {
         name: event.target.name.value,
         totalPoint: 0,
-        // goals: [],
         createdTime: firestore.FieldValue.serverTimestamp()
       }
     ))

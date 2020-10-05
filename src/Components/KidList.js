@@ -2,6 +2,7 @@ import React from 'react';
 import Kid from './Kid'
 import { useSelector } from 'react-redux'
 import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase'
+import PropTypes from 'prop-types'
 
 function KidList(props) {
 
@@ -37,6 +38,11 @@ function KidList(props) {
       </React.Fragment>
     )
   }
+}
+
+KidList.propTypes = {
+  parentId: PropTypes.string,
+  onKidSelection: PropTypes.func
 }
 
 export default KidList

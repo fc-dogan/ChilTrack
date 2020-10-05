@@ -49,13 +49,12 @@ console.log(id)
                   rewardPoint={goal.rewardPoint}
                   key={goal.id}
                 />
-                // <p> {goal.reward } = {goal.rewardPoint} points</p>
               )
             })}
         </div>
         <div className="input-field">
           <Link to={{ pathname: "/creategoal", selectedKid: { kid: kid, id: id} }} key={id} >
-          <button className="btn pink lighten-1">Create a new goal</button>
+          <button className="btn pink lighten-1">Add a new goal</button>
           </Link>
         </div>
       <div className="card-footer">

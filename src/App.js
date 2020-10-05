@@ -23,7 +23,7 @@ function App() {
         <Route path='/create' component={CreateNewKidProfile} />
         <Route path='/details/:id' component={KidDetails} />
         <Route path='/creategoal' component={CreateNewGoal} />
-        <Route path='/goodbehaviors' component={GoodBehaviorList} />
+        {/* <Route path='/goodbehaviors' component={GoodBehaviorList} /> */}
         {/* <Route path='/' component={ProfileControl} /> */}
       </Switch>
     </div>

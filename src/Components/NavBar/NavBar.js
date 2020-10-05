@@ -18,7 +18,7 @@ const NavBar = (props) => {
       {/* <a href="#!" class="brand-logo">Logo</a> */}
       {/* <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a> */}
         <Link to='/' className="brand-logo">ChilTrack</Link>
-      <ul class="right hide-on-med-and-down">
+      <ul class="right hide-on-sm-and-down">
           {links}
       </ul>
       </div>

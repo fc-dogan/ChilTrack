@@ -54,6 +54,7 @@ console.log(id)
         </div>
       <div className="card-footer">
         <button className="btn grey lighten-1" onClick={handleDeletingKidsProfile}>Delete </button>
+        <Link to='/dashboard'>Back to Dashboard</Link>
       </div>
       </div>
     </div>

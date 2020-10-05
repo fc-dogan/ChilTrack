@@ -45,7 +45,7 @@ function Kid(props) {
                 
                 <li class="tab"><a href={`#${name}-goodList`}><i className="material-icons right" id="good" style={{ color: '#F4A261' }}>done_outline</i></a></li>
 
-                <li class="tab"><a href={`#${name}-badList`}><i className="material-icons right" style={{ color: '#F4A261' }}>thumb_down</i></a></li>
+                <li class="tab"><a href={`#${name}-badList`}><i className="material-icons left" style={{ color: '#F4A261' }}>thumb_down</i></a></li>
 
               </ul>
             </div>

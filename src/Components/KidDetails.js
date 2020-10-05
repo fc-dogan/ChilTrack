@@ -47,6 +47,7 @@ console.log(id)
                 <Goals
                   reward={goal.reward}
                   rewardPoint={goal.rewardPoint}
+                  kidsPoint = {kid.totalPoint}
                   key={goal.id}
                 />
               )

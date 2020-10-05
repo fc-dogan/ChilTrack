@@ -12,6 +12,7 @@ function KidList(props) {
   const kids = useSelector(state => state.firestore.ordered.kids);
   let kidsBelongToParent;
   
+  
   if (isLoaded(kids)) {
     kidsBelongToParent = kids.filter(kid =>{
       return  props.parentId === kid.parentId
@@ -24,7 +25,6 @@ function KidList(props) {
           return <Kid
             name={kid.name}
             totalPoint={kid.totalPoint}
-            goals={kid.goals}
             id={kid.id}
             key={kid.id}/>
         })}

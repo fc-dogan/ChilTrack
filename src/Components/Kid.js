@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import PropTypes from "prop-types";
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
+import { useFirestore} from 'react-redux-firebase';
+import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import {incrementKidsPoints, decrementKidsPoints } from '../actions/kidsActions'
@@ -12,6 +14,7 @@ import BadBehaviorList from './BehaviorList/BadBehaviorList'
 import M from "materialize-css";
 
 function Kid(props) {
+  const firestore = useFirestore();
  const { name, totalPoint, id } = props;
   useEffect(() => {
       // Auto initialize all the things!
@@ -25,6 +28,11 @@ function Kid(props) {
   const decreasePoint = () => {
     dispatch(decrementKidsPoints(id))
   }
+
+  useFirestoreConnect([
+    { collection: 'goals' }
+  ]);
+
     return (
       <React.Fragment>  
            <div class="card">

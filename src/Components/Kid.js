@@ -16,7 +16,7 @@ import M from "materialize-css";
 import { propTypes } from 'react-bootstrap/esm/Image';
 
 function Kid(props) {
-  const firestore = useFirestore();
+  // const firestore = useFirestore();
  const { name, totalPoint, id, whenKidClicked } = props;
   useEffect(() => {
       // Auto initialize all the things!

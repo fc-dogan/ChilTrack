@@ -11,52 +11,27 @@ import {incrementKidsPoints, decrementKidsPoints } from '../actions/kidsActions'
 
 function KidDetails(props) {
   const history = useHistory();
+  const firestore = useFirestore();
+  const dispatch = useDispatch();
   const id = props.location.props.id;
   const kids = useSelector(state => state.firestore.data.kids);
   const kid = kids[id]
+  const goals = useSelector(state => state.firestore.ordered.goals);
 
- const firestore = useFirestore();
- const dispatch = useDispatch();
-
- const handleDeletingKidsProfile =() =>{
-    firestore.delete({collection: 'kids', doc: id });
-    history.push('/dashboard')
- }
- const handleSpendingPointsForReward =(GoalId, rewardPoint, kidId) => {
-   firestore.delete({collection: 'goals', doc: GoalId });
-   dispatch(decrementKidsPoints(kidId, rewardPoint))
-  
-   console.log("spend")
- }
-
- useFirestoreConnect([
-  { collection: 'goals' }
-]);
-
-// const [availableRewards, setAvailableRewards] = useState([])
-const goals = useSelector(state => state.firestore.ordered.goals);
-console.log(goals)
-console.log(id)
-
-const selectGoals = (goalsForKid) => {
-  dispatch(selectedGoals(goalsForKid))
-}
+  const handleDeletingKidsProfile =() =>{
+      firestore.delete({collection: 'kids', doc: id });
+      history.push('/dashboard')
+  }
+  const handleSpendingPointsForReward =(GoalId, rewardPoint, kidId) => {
+    firestore.delete({collection: 'goals', doc: GoalId });
+    dispatch(decrementKidsPoints(kidId, rewardPoint));
+  }
 
   let goalsForSelectedKid;
   let availableRewards;
   if (isLoaded(goals)) {
-    goalsForSelectedKid = goals.filter(goal => {
-      return id === goal.kidId;
-    })
-  
-    availableRewards =  goalsForSelectedKid.filter( goal => {
-        return goal.rewardPoint <= kid.totalPoint
-    })
-      
-      console.log(availableRewards);
-
-
-    selectGoals(goalsForSelectedKid)
+    goalsForSelectedKid = goals.filter(goal => { return id === goal.kidId })
+    availableRewards =  goalsForSelectedKid.filter( goal => { return goal.rewardPoint <= kid.totalPoint })
     return (
       <div className="container section kid-details">
       <div className="card z-depth-0">
@@ -72,25 +47,19 @@ const selectGoals = (goalsForKid) => {
                   reward={goal.reward}
                   rewardPoint={goal.rewardPoint}
                   kidsPoint = {kid.totalPoint}
-                  key={goal.id}
-                />
-              )
+                  key={goal.id} />)
             })}
           <h5> Available Rewards:</h5>
           {availableRewards.map( goal =>{
               return (
                 <div>
-
                   <Goals
                     reward={goal.reward}
                     rewardPoint={goal.rewardPoint}
                     kidsPoint = {kid.totalPoint}
-                    key={goal.id}
-                    // toSpend={handleSpendingPointsForReward}
-                  />
+                    key={goal.id} />
                   <button onClick={()=>handleSpendingPointsForReward(goal.id, goal.rewardPoint, id)}>Spend1</button>
-                </div>
-              )
+                </div>)
             })}
         </div>
         <div className="input-field">

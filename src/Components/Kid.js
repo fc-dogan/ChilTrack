@@ -115,7 +115,7 @@ Kid.propTypes = {
   name: PropTypes.string,
   totalPoint: PropTypes.number,
   id: PropTypes.string,
-  goalList: PropTypes.object
+  // goalList: PropTypes.object
 }
 
 export default Kid

@@ -25,24 +25,24 @@ function Kid(props) {
     return (
       <React.Fragment>  
            <div className="card">
-            <div className="card-content">
+            <div className="card-content  deep-orange  lighten-5">
               <Link to={{
                 pathname:`/details/${id}`,
                 props: { id: id}
                 }} key={id}>  
-                  <div className="card-panel hoverable grey lighten-4 grey-text">
-                    <p>Name: {name} </p>
+                  <div className="card-panel hoverable  deep-orange  lighten-5 deep-purple-text">
+                    <h4 >{name} </h4>
                     <p>Total Point: <em>{totalPoint}</em></p>
                   </div>
               </Link>
             </div>
-            <div className="card-tabs">
+            <div className="card-tabs right">
               <ul className="tabs ">
-                <li className="tab"><a href={`#${name}-empty`}><i className="material-icons left active" style={{ color: '#F4A261' }}>remove</i></a></li>
+                <li className="tab"><a href={`#${name}-empty`}  className="active"><i className=" material-icons" style={{ color: '##e53935',fontSize:"50px" }}>expand_less</i></a></li>
                 
-                <li className="tab"><a href={`#${name}-goodList`}><i className="material-icons right" id="good" style={{ color: '#F4A261' }}>done_outline</i></a></li>
+                <li className="tab"><a href={`#${name}-goodList`}><i className="material-icons hoverable" id="good" style={{ color: '#006064  ',fontSize:"50px" }}>sentiment_very_satisfied</i></a></li>
 
-                <li className="tab"><a href={`#${name}-badList`}><i className="material-icons left" style={{ color: '#F4A261' }}>thumb_down</i></a></li>
+                <li className="tab"><a href={`#${name}-badList`}><i className="material-icons hoverable" style={{ color: '#e65100 ', fontSize:"50px" }}>sentiment_very_dissatisfied</i></a></li>
 
               </ul>
             </div>

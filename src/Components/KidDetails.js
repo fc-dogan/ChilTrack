@@ -59,8 +59,8 @@ function KidDetails(props) {
                     reward={goal.reward}
                     rewardPoint={goal.rewardPoint}
                     kidsPoint = {kid.totalPoint}
-                    key={goal.id} />
-                  <button onClick={()=>handleSpendingPointsForReward(goal.id, goal.rewardPoint, id)}>Spend1</button>
+                    key={`available${goal.id}`} />
+                  <button onClick={()=>handleSpendingPointsForReward(goal.id, goal.rewardPoint, id)}>Spend</button>
                 </div>)
             })}
         </div>

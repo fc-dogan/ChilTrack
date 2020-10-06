@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import * as a from './../actions';
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 
 class SignIn extends React.Component {
   state = {
@@ -38,6 +38,7 @@ class SignIn extends React.Component {
           <button className="btn pink lighten-1 z-depth-0">Login</button>
           <div className="center red-text">
           { authError ? <p>{authError}</p> : null }
+          <p>Don't have an account?  <Link to='./signup'> Sign Up </Link></p>
           </div>
         </div>
       </form>

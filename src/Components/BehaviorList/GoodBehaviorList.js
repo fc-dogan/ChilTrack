@@ -16,7 +16,7 @@ function GoodBehaviorList(props) {
         <div key={goodbehavior}>
             <div className="divider"></div>
             <div className="section">
-              <a class="waves-effect waves-light btn-large" onClick={() => props.onIncreasePoint()}>{goodbehavior}</a>
+              <a className="waves-effect waves-light btn-large" onClick={() => props.onIncreasePoint()}>{goodbehavior}</a>
             </div>
         </div>
         ) 

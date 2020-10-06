@@ -17,7 +17,7 @@ function BadBehaviorList(props) {
           <div key={badbehavior}>
             <div className="divider"></div>
             <div className="section">
-              <a class="waves-effect waves-light btn-large" onClick={() => props.onDecreasePoint()}>{badbehavior}</a>
+              <a className="waves-effect waves-light btn-large" onClick={() => props.onDecreasePoint()}>{badbehavior}</a>
             </div>
           </div>
         )

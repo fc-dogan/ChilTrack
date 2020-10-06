@@ -7,6 +7,7 @@ import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase'
 import Goals from './Goals'
 import {selectedGoals} from '../actions/selectedGoalsActions'
 import { useDispatch } from 'react-redux'
+import {incrementKidsPoints, decrementKidsPoints } from '../actions/kidsActions'
 
 function KidDetails(props) {
   const history = useHistory();
@@ -21,8 +22,9 @@ function KidDetails(props) {
     firestore.delete({collection: 'kids', doc: id });
     history.push('/dashboard')
  }
- const handleSpendingPointsForReward =(id) => {
-  firestore.delete({collection: 'goals', doc: id });
+ const handleSpendingPointsForReward =(GoalId, rewardPoint, kidId) => {
+   firestore.delete({collection: 'goals', doc: GoalId });
+   dispatch(decrementKidsPoints(kidId, rewardPoint))
   
    console.log("spend")
  }
@@ -86,7 +88,7 @@ const selectGoals = (goalsForKid) => {
                     key={goal.id}
                     // toSpend={handleSpendingPointsForReward}
                   />
-                  <button onClick={()=>handleSpendingPointsForReward(goal.id)}>Spend1</button>
+                  <button onClick={()=>handleSpendingPointsForReward(goal.id, goal.rewardPoint, id)}>Spend1</button>
                 </div>
               )
             })}

@@ -43,13 +43,13 @@ export const incrementKidsPoints =  (id) =>{
     });
   }
 }  
-export const decrementKidsPoints =  (id) =>{
+export const decrementKidsPoints =  (id, amount) =>{
   return (dispatch, getState, {getFirestore}) => {
     const firestore = getFirestore();
     const kid = getState().firestore.data.kids[id];
       
     firestore.collection('kids').doc(id).update({
-      totalPoint: kid.totalPoint - 1
+      totalPoint: kid.totalPoint - amount
     })
     .then(() => {
       dispatch({ type: 'DECREMENT_SUCCESS' });

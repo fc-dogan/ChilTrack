@@ -1,16 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import KidList from './KidList';
+import { Link, Redirect } from 'react-router-dom'
 
-import { Link } from 'react-router-dom'
-// import { connect } from 'react-redux';
-// import { withFirestore, isLoaded } from 'react-redux-firebase';
 
 class Dashboard extends React.Component {
   render() {
     const { auth } = this.props;
     console.log(auth.uid)
-
+    if (!auth.uid) return <Redirect to='/signin' /> 
     return (
       <div className="dashboard container">
         <h2>Parent Dashboard</h2>
@@ -24,7 +22,6 @@ class Dashboard extends React.Component {
 const mapStateToProps = state =>{
   return {
     auth: state.firebase.auth,
-    // kids: state.firestore.ordered.kids
     }
 }
 export default connect(mapStateToProps)(Dashboard);

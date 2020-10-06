@@ -6,7 +6,6 @@ import SignUp from './Components/SignUp';
 import Dashboard from './Components/Dashboard'
 import CreateNewKidProfile from './Components/CreateNewKidProfile';
 import KidDetails from './Components/KidDetails'
-import ProfileControl from './Components/ProfileControl';
 import CreateNewGoal from './Components/CreateNewGoal';
 import GoodBehaviorList from './Components/BehaviorList/GoodBehaviorList';
 

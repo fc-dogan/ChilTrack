@@ -23,17 +23,18 @@ const NavBar = (props) => {
        <nav >
       <div className="nav-wrapper">
       {/* <a href="#!" class="brand-logo">Logo</a> */}
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <Link to='/dashboard' className="brand-logo">ChilTrack</Link>
-      <ul className="right hide-on-med-and-down">
+      <Link to='/dashboard' className="brand-logo left">ChilTrack</Link>
+        {/* <h3><a href='#!' className="left">ChilTrack</a></h3> */}
+      {/* <a data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a> */}
+      <ul className="right ">
           {links}
       </ul>
       </div>
     </nav>
 
-     <ul class="sidenav" id="mobile-demo">
+     {/* <ul className="sidenav" id="mobile-demo">
       {links}
-    </ul>
+    </ul> */}
     </React.Fragment>
    
   )
@@ -59,5 +60,4 @@ export default connect(mapStateToProps)(NavBar)
     {links}
   </Nav>
 </Navbar.Collapse>
-
 </Navbar> */}

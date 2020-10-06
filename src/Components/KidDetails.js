@@ -21,7 +21,9 @@ function KidDetails(props) {
     firestore.delete({collection: 'kids', doc: id });
     history.push('/dashboard')
  }
- const handleSpendingPointsForReward =() => {
+ const handleSpendingPointsForReward =(id) => {
+  firestore.delete({collection: 'goals', doc: id });
+  
    console.log("spend")
  }
 
@@ -82,9 +84,9 @@ const selectGoals = (goalsForKid) => {
                     rewardPoint={goal.rewardPoint}
                     kidsPoint = {kid.totalPoint}
                     key={goal.id}
-                    toSpend={handleSpendingPointsForReward}
+                    // toSpend={handleSpendingPointsForReward}
                   />
-                  <button onClick={()=>handleSpendingPointsForReward()}>Spend1</button>
+                  <button onClick={()=>handleSpendingPointsForReward(goal.id)}>Spend1</button>
                 </div>
               )
             })}

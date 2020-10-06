@@ -28,7 +28,7 @@ function GoodBehaviorList(props) {
 }
 
 GoodBehaviorList.propTypes = {
-  onIncreasePoint: PropTypes.func
+  onIncreasePoint: PropTypes.func,
 }
 
 export default GoodBehaviorList

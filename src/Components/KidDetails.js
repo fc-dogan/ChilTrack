@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useSelector } from 'react-redux';
 import { useFirestore} from 'react-redux-firebase';
 import { Link, useHistory } from 'react-router-dom';
 import CreateNewGoal from './CreateNewGoal'
 import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase'
 import Goals from './Goals'
+import {selectedGoals} from '../actions/selectedGoalsActions'
+import { useDispatch } from 'react-redux'
 
 function KidDetails(props) {
   const history = useHistory();
@@ -13,7 +15,8 @@ function KidDetails(props) {
   const kid = kids[id]
 
  const firestore = useFirestore();
-  
+ const dispatch = useDispatch();
+
  const handleDeletingKidsProfile =() =>{
     firestore.delete({collection: 'kids', doc: id });
     history.push('/dashboard')
@@ -23,16 +26,30 @@ function KidDetails(props) {
   { collection: 'goals' }
 ]);
 
+// const [availableRewards, setAvailableRewards] = useState([])
 const goals = useSelector(state => state.firestore.ordered.goals);
 console.log(goals)
 console.log(id)
 
-  let goalsForSelectedKid;
-  if (isLoaded(goals)) {
-      goalsForSelectedKid = goals.filter(goal => {
-        return id === goal.kidId
-      })
+const selectGoals = (goalsForKid) => {
+  dispatch(selectedGoals(goalsForKid))
+}
 
+  let goalsForSelectedKid;
+  let availableRewards;
+  if (isLoaded(goals)) {
+    goalsForSelectedKid = goals.filter(goal => {
+      return id === goal.kidId;
+    })
+  
+    availableRewards =  goalsForSelectedKid.filter( goal => {
+        return goal.rewardPoint <= kid.totalPoint
+    })
+      
+      console.log(availableRewards);
+
+
+    selectGoals(goalsForSelectedKid)
     return (
       <div className="container section kid-details">
       <div className="card z-depth-0">
@@ -43,6 +60,17 @@ console.log(id)
           <p>Total Point {kid.totalPoint} </p>
           <h5>Goals:</h5>
           {goalsForSelectedKid.map( goal =>{
+              return (
+                <Goals
+                  reward={goal.reward}
+                  rewardPoint={goal.rewardPoint}
+                  kidsPoint = {kid.totalPoint}
+                  key={goal.id}
+                />
+              )
+            })}
+          <h5> Available Rewards:</h5>
+          {availableRewards.map( goal =>{
               return (
                 <Goals
                   reward={goal.reward}

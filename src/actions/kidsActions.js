@@ -58,3 +58,17 @@ export const decrementKidsPoints =  (id) =>{
     });
   }
 }  
+
+// export const reachTheGoalPoint = (id) => {
+//    return (dispatch, getState, {getFirestore}) => {
+//     const firestore = getFirestore();
+//     const profile = getState().firebase.profile;
+//     const parentId = getState().firebase.auth.uid;
+    
+//     }).then(() => {
+//       dispatch({ type: 'CREATE_KID_SUCCESS' });
+//     }).catch(err => {
+//       dispatch({ type: 'CREATE_KID_ERROR' }, err);
+//     });
+//   }
+// }

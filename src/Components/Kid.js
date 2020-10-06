@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from "prop-types";
 import { useSelector } from 'react-redux';
 import { useFirestore} from 'react-redux-firebase';
@@ -13,9 +13,11 @@ import {close} from 'react-icons-kit/ionicons/close'
 import GoodBehaviorList from './BehaviorList/GoodBehaviorList'
 import BadBehaviorList from './BehaviorList/BadBehaviorList'
 import M from "materialize-css";
-import { propTypes } from 'react-bootstrap/esm/Image';
+import {selectedGoals} from '../actions/selectedGoalsActions'
+
 
 function Kid(props) {
+  const [showGoalModal, setShowGoalModal] = useState(false)
   // const firestore = useFirestore();
  const { name, totalPoint, id, whenKidClicked } = props;
   useEffect(() => {
@@ -25,7 +27,8 @@ function Kid(props) {
   const dispatch = useDispatch();
  
   const increasePoint = () => {
-    dispatch(incrementKidsPoints(id))
+    dispatch(incrementKidsPoints(id));
+    isPointReachTheReward()
   }
   const decreasePoint = () => {
     dispatch(decrementKidsPoints(id))
@@ -34,20 +37,45 @@ function Kid(props) {
   const selectKid = () => {
     dispatch(selectedKid(id, name, totalPoint))
   }
+ 
 
   useFirestoreConnect([
     { collection: 'goals' }
   ]);
-
-    return (
-      <React.Fragment>  
-           <div class="card">
+  // const handleClick = () => {
+    //   selectKid();
+    //   return whenKidClicked(id)
+    // }
+    const goals = useSelector(state => state.firestore.ordered.goals);
+    let goalsForSelectedKid;
+    if (isLoaded(goals)) {
+      goalsForSelectedKid = goals.filter(goal => {
+        return id === goal.kidId
+      })
+    }
+    console.log(goalsForSelectedKid)
+    const isPointReachTheReward = () =>  goalsForSelectedKid ? goalsForSelectedKid.map(goal => {
+      if(goal.rewarPoint === totalPoint){
+        setShowGoalModal(true)
+      }
+    }) : "";
+    // useEffect( isPointReachTheReward())
+console.log(showGoalModal)
+  let currentlyVisible;
+   if(showGoalModal === true) {
+     currentlyVisible = (
+       <p>"reach the reward"</p>
+     )
+   } else {
+     currentlyVisible = (
+        <React.Fragment>  
+           <div class="card"> 
             <div class="card-content">
               <Link to={{
                 pathname:`/details/${id}`,
-                props: { id: id}
+                props: { id: id }
                 }} key={id}
-                onClick={selectKid}>  
+                onClick={selectKid} >  
                   <div className="card-panel hoverable grey lighten-4 grey-text">
                     <p>Name: {name} </p>
                     <p>Total Point: <em>{totalPoint}</em></p>
@@ -75,6 +103,13 @@ function Kid(props) {
             </div>
           </div>
       </React.Fragment>
+     )
+   }
+
+    return (
+      <React.Fragment>  
+     {currentlyVisible}
+     </React.Fragment>
     ) 
 }
 
@@ -82,7 +117,7 @@ Kid.propTypes = {
   name: PropTypes.string,
   totalPoint: PropTypes.number,
   id: PropTypes.string,
-  // whenKidClicked: propTypes.func
+  goalList: PropTypes.object
 }
 
 export default Kid

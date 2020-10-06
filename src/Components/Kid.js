@@ -38,7 +38,7 @@ function Kid(props) {
             </div>
             <div className="card-tabs">
               <ul className="tabs ">
-                <li className="tab"><a href={`#${name}-empty`} className="active"></a></li>
+                <li className="tab"><a href={`#${name}-empty`}><i className="material-icons left active" style={{ color: '#F4A261' }}>remove</i></a></li>
                 
                 <li className="tab"><a href={`#${name}-goodList`}><i className="material-icons right" id="good" style={{ color: '#F4A261' }}>done_outline</i></a></li>
 

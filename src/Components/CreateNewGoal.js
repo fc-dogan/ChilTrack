@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useFirestore} from 'react-redux-firebase';
 import { useDispatch } from 'react-redux'
-import { createNewGoal } from '../actions/goalsActions';
+import * as a from './../actions';
 import { Link, useHistory } from 'react-router-dom';
 
 function CreateNewGoal(props) { 
@@ -11,7 +11,7 @@ function CreateNewGoal(props) {
   
   function addGoalToFirestore(event){
     event.preventDefault();
-    dispatch(createNewGoal(
+    dispatch(a.createNewGoal(
       {
         reward: event.target.reward.value,
         rewardPoint: parseInt(event.target.rewardPoint.value),

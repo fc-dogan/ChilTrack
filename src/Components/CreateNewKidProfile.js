@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFirestore } from 'react-redux-firebase';
 import { useDispatch } from 'react-redux'
-import {createNewKid} from '../actions/kidsActions'
+import * as a from './../actions';
 import { useHistory } from 'react-router-dom';
 
 function CreateNewKidProfile() {
@@ -11,7 +11,7 @@ function CreateNewKidProfile() {
   
   function addKidToFirestore(event){
     event.preventDefault();
-    dispatch(createNewKid(
+    dispatch(a.createNewKid(
       {
         name: event.target.name.value,
         totalPoint: 0,

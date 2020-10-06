@@ -5,9 +5,8 @@ import { Link, useHistory } from 'react-router-dom';
 import CreateNewGoal from './CreateNewGoal'
 import { useFirestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase'
 import Goals from './Goals'
-import {selectedGoals} from '../actions/selectedGoalsActions'
 import { useDispatch } from 'react-redux'
-import {incrementKidsPoints, decrementKidsPoints } from '../actions/kidsActions'
+import * as a from './../actions';
 
 function KidDetails(props) {
   const history = useHistory();
@@ -16,6 +15,9 @@ function KidDetails(props) {
   const id = props.location.props.id;
   const kids = useSelector(state => state.firestore.data.kids);
   const kid = kids[id]
+  useFirestoreConnect([
+    { collection: 'goals' }
+  ]);
   const goals = useSelector(state => state.firestore.ordered.goals);
 
   const handleDeletingKidsProfile =() =>{
@@ -23,8 +25,8 @@ function KidDetails(props) {
       history.push('/dashboard')
   }
   const handleSpendingPointsForReward =(GoalId, rewardPoint, kidId) => {
+    dispatch(a.decrementKidsPoints(kidId, rewardPoint));
     firestore.delete({collection: 'goals', doc: GoalId });
-    dispatch(decrementKidsPoints(kidId, rewardPoint));
   }
 
   let goalsForSelectedKid;

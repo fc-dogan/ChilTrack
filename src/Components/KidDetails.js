@@ -21,6 +21,9 @@ function KidDetails(props) {
     firestore.delete({collection: 'kids', doc: id });
     history.push('/dashboard')
  }
+ const handleSpendingPointsForReward =() => {
+   console.log("spend")
+ }
 
  useFirestoreConnect([
   { collection: 'goals' }
@@ -72,12 +75,17 @@ const selectGoals = (goalsForKid) => {
           <h5> Available Rewards:</h5>
           {availableRewards.map( goal =>{
               return (
-                <Goals
-                  reward={goal.reward}
-                  rewardPoint={goal.rewardPoint}
-                  kidsPoint = {kid.totalPoint}
-                  key={goal.id}
-                />
+                <div>
+
+                  <Goals
+                    reward={goal.reward}
+                    rewardPoint={goal.rewardPoint}
+                    kidsPoint = {kid.totalPoint}
+                    key={goal.id}
+                    toSpend={handleSpendingPointsForReward}
+                  />
+                  <button onClick={()=>handleSpendingPointsForReward()}>Spend1</button>
+                </div>
               )
             })}
         </div>

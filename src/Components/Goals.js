@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import PropTypes from'prop-types'
 
 function Goals(props) {
-  const { kidsPoint, reward, rewardPoint} = props;
+  const { kidsPoint, reward, rewardPoint, toSpend} = props;
   // const [showModal, setShowModal] = useState(false);
 
 
@@ -30,6 +30,7 @@ function Goals(props) {
   return (
     <div>
       <p> {reward } = {rewardPoint} points</p>
+      {/* <button onClick={()=> toSpend()}> Spend</button> */}
     </div>
   )
 }
@@ -37,7 +38,8 @@ function Goals(props) {
 Goals.propTypes = {
   reward: PropTypes.string,
   rewardPoint: PropTypes.number,
-  kidsPoint: PropTypes.number
+  kidsPoint: PropTypes.number,
+  toSpend: PropTypes.func
 }
 
 export default Goals

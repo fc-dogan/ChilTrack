@@ -10,7 +10,8 @@ function Goals(props) {
 
   return (
     <div onClick={handleEditReward}>
-      <li> {reward } = {rewardPoint} points</li>
+      <h5 style={{ color: '#e53935' }}><i class="material-icons left">star_rate</i>{reward }</h5>
+      <p>{rewardPoint} points</p>
     </div>
     
   )

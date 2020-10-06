@@ -14,7 +14,7 @@ body {
 /* 
 360deg, 10%,#3AA17E 360% */
 
-h1, h2, h3, h4, h5, p {
+h1, h2, h3, h4, h5, p, li {
   font-family: 'Architects Daughter', cursive;
   color: #280880
 }
@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, p {
   color: #280880
 }
 
-button {
+/* button {
   margin: 20px;
-  padding: 5px;
-}
+  padding: 15px;
+} */

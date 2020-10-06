@@ -39,36 +39,48 @@ function KidDetails(props) {
       <div className="card z-depth-0">
         <div className="card-content">
           <h3><span className="card-title">{kid.name}</span></h3>
+          <p>Total Point: {kid.totalPoint} </p>
         </div>
         <div className="card-action ">
-          <p>Total Point: {kid.totalPoint} </p>
-          <h5>Goals:</h5>
-          {goalsForSelectedKid.map( goal =>{
-              return (
-                <Goals
-                  reward={goal.reward}
-                  rewardPoint={goal.rewardPoint}
-                  kidsPoint = {kid.totalPoint}
-                  key={goal.id} />)
-            })}
-          <h5> Available Rewards:</h5>
-          {availableRewards.map( goal =>{
-              return (
-                <div>
+          <div class="row">
+            <div class="col s12 m6">
+              <h5>Goals:</h5>
+              {goalsForSelectedKid.map( goal =>{
+                return (
                   <Goals
                     reward={goal.reward}
                     rewardPoint={goal.rewardPoint}
                     kidsPoint = {kid.totalPoint}
-                    key={`available${goal.id}`} />
-                  <button onClick={()=>handleSpendingPointsForReward(goal.id, goal.rewardPoint, id)}>Spend</button>
-                </div>)
-            })}
+                    key={goal.id} />)
+                })}
+            </div>
+            <div class="col s12 m6">
+              <h5> Available Rewards:</h5>
+              {availableRewards.map( goal =>{
+                  return (
+                    <div>
+                      <Goals
+                        reward={goal.reward}
+                        rewardPoint={goal.rewardPoint}
+                        kidsPoint = {kid.totalPoint}
+                        key={`available${goal.id}`} />
+                      <button onClick={()=>handleSpendingPointsForReward(goal.id, goal.rewardPoint, id)}
+                              className="btn-small grey lighten-1"
+                        ><i class="material-icons left">done_outline</i>spend points for {goal.reward}</button>
+                    </div>)
+                })}
+            </div>
+          </div>
+        <div class="row ">
+          <div class="col s6">
+            <Link to={{ pathname: "/creategoal", selectedKid: { kid: kid, id: id} }} key={id} >
+              <button className="btn pink lighten-1"><i class="material-icons left">add_circle</i> new goal</button>
+            </Link>
+          </div>
+          <div class="col s6">
+            <Link to='/dashboard'><button className="btn pink lighten-1"><i class="material-icons left">undo</i>Back to Kids</button></Link>
+          </div>
         </div>
-        <div className="input-field center-align">
-          <Link to={{ pathname: "/creategoal", selectedKid: { kid: kid, id: id} }} key={id} >
-          <button className="btn pink lighten-1">Add a new goal</button>
-          </Link>
-          <Link to='/dashboard'><button className="btn pink lighten-1"><i class="material-icons left">cloud</i>Back to Dashboard</button></Link>
         </div>
       <div className="card-footer">
         <button className="btn grey lighten-1" onClick={handleDeletingKidsProfile}>Delete {kid.name}'s profile </button>

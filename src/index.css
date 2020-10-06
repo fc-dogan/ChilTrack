@@ -5,11 +5,26 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
   background-image: linear-gradient(to right top, #eee2e7, #ffdedd, #ffdec4, #ffe7aa, #dcf6a3);
   background-position: bottom;
   background-color: #d9eff1;
   min-height: 100%;
+  font-family: 'Architects Daughter', cursive;
 }
 /* 
 360deg, 10%,#3AA17E 360% */
+
+h1, h2, h3, h4, h5, p {
+  font-family: 'Architects Daughter', cursive;
+  color: #280880
+}
+
+.brand-logo {
+  font-family: 'Architects Daughter', cursive;
+  color: #280880
+}
+
+button {
+  margin: 20px;
+  padding: 5px;
+}

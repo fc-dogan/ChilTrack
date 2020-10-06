@@ -20,7 +20,7 @@ const NavBar = (props) => {
 
   return (
    <React.Fragment >
-      <nav className=" transparent">
+      <nav className=" deep-purple lighten-1">
       <div className="nav-wrapper">
       {/* <a href="#!" class="brand-logo">Logo</a> */}
       <Link to='/dashboard' className="brand-logo left">ChilTrack</Link>

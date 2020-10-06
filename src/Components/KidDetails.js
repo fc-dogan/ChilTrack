@@ -38,10 +38,10 @@ function KidDetails(props) {
       <div className="container section kid-details">
       <div className="card z-depth-0">
         <div className="card-content">
-          <span className="card-title">{kid.name}</span>
+          <h3><span className="card-title">{kid.name}</span></h3>
         </div>
-        <div className="card-action grey lighten-4 grey-text">
-          <p>Total Point {kid.totalPoint} </p>
+        <div className="card-action ">
+          <p>Total Point: {kid.totalPoint} </p>
           <h5>Goals:</h5>
           {goalsForSelectedKid.map( goal =>{
               return (
@@ -64,14 +64,14 @@ function KidDetails(props) {
                 </div>)
             })}
         </div>
-        <div className="input-field">
+        <div className="input-field center-align">
           <Link to={{ pathname: "/creategoal", selectedKid: { kid: kid, id: id} }} key={id} >
           <button className="btn pink lighten-1">Add a new goal</button>
           </Link>
+          <Link to='/dashboard'><button className="btn pink lighten-1"><i class="material-icons left">cloud</i>Back to Dashboard</button></Link>
         </div>
       <div className="card-footer">
-        <button className="btn grey lighten-1" onClick={handleDeletingKidsProfile}>Delete </button>
-        <Link to='/dashboard'>Back to Dashboard</Link>
+        <button className="btn grey lighten-1" onClick={handleDeletingKidsProfile}>Delete {kid.name}'s profile </button>
       </div>
       </div>
     </div>

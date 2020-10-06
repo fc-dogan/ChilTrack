@@ -23,7 +23,7 @@ function CreateNewGoal(props) {
 
   return (
     <div className="container" onSubmit={addGoalToFirestore}>
-    <form className="white" >
+    <form >
       <h5 className="grey-text text-darken-3">Add a new Goal</h5>
       <div className="input-field">
         <input type="text" name='reward' />

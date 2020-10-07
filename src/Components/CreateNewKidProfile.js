@@ -4,9 +4,8 @@ import { useDispatch } from 'react-redux'
 import * as a from './../actions';
 import { useHistory } from 'react-router-dom';
 import M from "materialize-css";
-import a1 from './../assets/avatars/a1.png'
-import a2 from './../assets/avatars/a2.png'
-import a3 from './../assets/avatars/a3.png'
+
+
 
 // import one from './../assets/avatars/one.png'
 
@@ -20,9 +19,9 @@ function CreateNewKidProfile() {
     M.FormSelect.init(selects, {});
 })
 
-const imageList=[a1, a2, a3]
+// const imageList=[a1, a2, a3]
 const generateImage =() =>{
-  return Math.floor(Math.random() * imageList.length);
+  return Math.floor(Math.random() * 9);
 }
   
   function addKidToFirestore(event){

@@ -9,6 +9,12 @@ import * as a from './../actions';
 import a1 from './../assets/avatars/a1.png'
 import a2 from './../assets/avatars/a2.png'
 import a3 from './../assets/avatars/a3.png'
+import a4 from './../assets/avatars/a4.png'
+import a5 from './../assets/avatars/a5.png'
+import a6 from './../assets/avatars/a6.png'
+import a7 from './../assets/avatars/a7.png'
+import a8 from './../assets/avatars/a8.png'
+import a9 from './../assets/avatars/a9.png'
 
 function Kid(props) {
  const { name, totalPoint, id, image } = props;
@@ -25,8 +31,7 @@ function Kid(props) {
     dispatch(a.decrementKidsPoints(id, 1))
   }
 
-  const imageList=[a1, a2, a3]
-
+  const imageList=[a1, a2, a3,a4,a5,a6,a7,a8,a9]
     return (
       <React.Fragment>  
         <div className="col s12 m12">

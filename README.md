@@ -2,13 +2,13 @@
 
 #### _A React Redux application for parents to track thir kids' daily progress._ 
 
-#### _September 25, 2020 | Fatma C. Dogan_
+#### _October, 2020 | Fatma C. Dogan_
 
 ## Description
 
 _An application for parents who can track their kids’ behavior, daily progress, and set a goal(reward) to motivate them_
 
-<img src="img/create-kid-profile1.gif" width="250px"/>
+<img src="img/create-kid-profile1.gif" width="450px"/>
 
 ### Component Diagram
 
@@ -34,26 +34,33 @@ _An application for parents who can track their kids’ behavior, daily progress
 * Capability to set up multiple children to their account
 * Capability see available rewards to spend
 
+<details>
+<summary>▫︎  Additional Features</summary>
+
+* Capability update(manage) child profile
+*  Capability update rewards
+*  Capability get notified when the child reaches the reward point 
+*  Capability creates new behavior reason.
+*  Capability update behavior reason
+*  Capability upload their kids' images to the account
+*  Authorization with roles (parent, child)
+*  Create a goal chart for kids to see how close they are to the reward
+*  Account for kids to only see their report and access to manage rewards
+*  Create as a mobile application
+
+</details>  
+
 
 ## Setup/Installation Requirements
 
-#### Node install
+<details>
+<summary><strong> Node install</strong></summary>
 
-###### For macOS:
-_If Homebrew is not installed on your computer already, then install Homebrew by entering the following two commands in Terminal:_
-* $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-* $ echo 'export PATH=/usr/local/bin:$PATH' >> ~/.bash_profile
+If you do not already have it please visit the [Node.js website](https://nodejs.org/en/download/) for installation instructions.
+</details >
 
-_Install Git with the following command:_
-* $ brew install git
-
-_Next, install Node.js by entering the following command in Terminal:_
-* $ brew install node
-
-###### For Windows:
-_Please visit the [Node.js website](https://nodejs.org/en/download/) for installation instructions._
-
-#### Install this application
+<details>
+<summary><strong> Install this application </strong></summary>
 
 _Clone this repository via Terminal using the following commands:_
 ```
@@ -62,10 +69,41 @@ git clone https://github.com/fc-dogan/ChilTrack
 cd ChilTrack
 ```
 
-_Next, install npm at the project's root directory, and start the server:_
+_Next, install all required packages:_
 ```
 npm install
-npm start
+
+```
+_Create an new file named '.env'_
+```
+touch .env
+```
+
+Sign up for an account with Google Firebase and start a project. For more details follow this getting started guide. 
+[Getting started with Google Firebase](https://firebase.google.com/docs/storage/web/start)
+
+Please this into your new .env file. Fill in these details with the API keys you got from Google Firebase.
+```
+REACT_APP_FIREBASE_API_KEY = "provided by google firebase"
+
+REACT_APP_FIREBASE_AUTH_DOMAIN = "provided by google firebase"
+
+REACT_APP_FIREBASE_DATABASE_URL = "provided by google firebase"
+
+REACT_APP_FIREBASE_PROJECT_ID = "provided by google firebase"
+
+REACT_APP_FIREBASE_STORAGE_BUCKET = "provided by google firebase"
+
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID = "provided by google firebase"
+
+REACT_APP_FIREBASE_APP_ID = "provided by google firebase"
+
+```
+
+In the project directory, you can run: 
+
+ ```
+ npm start
 ```
 
 _If everything is correct, the localhost site should open automatically_
@@ -74,6 +112,11 @@ _View the contents of this project by opening in VSCode:_
 ```
 code .
 ```
+
+</details>
+
+
+
 
 
 ## Technologies Used

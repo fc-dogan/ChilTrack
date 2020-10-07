@@ -6,7 +6,9 @@ import GoodBehaviorList from './BehaviorList/GoodBehaviorList'
 import BadBehaviorList from './BehaviorList/BadBehaviorList'
 import M from "materialize-css";
 import * as a from './../actions';
-import one from './../assets/avatars/one.png'
+import a1 from './../assets/avatars/a1.png'
+import a2 from './../assets/avatars/a2.png'
+import a3 from './../assets/avatars/a3.png'
 
 function Kid(props) {
  const { name, totalPoint, id } = props;
@@ -23,6 +25,10 @@ function Kid(props) {
     dispatch(a.decrementKidsPoints(id, 1))
   }
 
+    const imageList=[a1, a2, a3]
+    const generateImage =() =>{
+      return imageList[Math.floor(Math.random() * imageList.length)];
+    }
 
     return (
       <React.Fragment>  
@@ -38,7 +44,7 @@ function Kid(props) {
                 }} key={id}>  
                { console.log(props.image)}
                   <div className="card-panel hoverable">
-                    <img className="responsive-img" src={props.image}></img>
+                    <img className=" circle responsive-img" src={generateImage()}  style={{ height:"100px" }}></img>
                     {/* <img class="profile-pic" src={image} /> */}
                     <p>Total Point: <em>{totalPoint}</em></p>
                     <a className="btn deep-purple lighten-1 right">{name}'s goals</a>

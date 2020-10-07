@@ -25,7 +25,6 @@ function KidList(props) {
             {kidsBelongToParent.map((kid) => {
               console.log(kid.parentId)
               return <Kid
-              image={kid.image}
                 name={kid.name}
                 totalPoint={kid.totalPoint}
                 goals={kid.goals}

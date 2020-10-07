@@ -8,6 +8,15 @@
 
 _An application for parents who can track their kids’ behavior, daily progress, and set a goal(reward) to motivate them_
 
+<details>
+<summary><strong> Use Case</strong> </summary>
+
+Users are parents who are struggling to motivate kids for good behavior. Especially parents who have multiple children track their behavior is very challenging. With this application, They can set up multiple children to their account, track the behaviors individually, and can provide specific goals for each of them.
+This application will be a fun-based behavioral tracker, designed to encourage desired behaviors in children. The purpose of the application is to get the kids involved by setting their goals with parents to get them a sense of achievement.  
+Users will have a list of good and bad behavior that are factors to reach the reward(goal). When the kid reaches a specific goal, the application will alert them if they want to spend points or keep collecting to reach a higher goal.
+
+</details >
+
 <img src="img/create-kid-profile1.gif" width="450px"/>
 
 ### Component Diagram
@@ -123,8 +132,9 @@ code .
 
 * _React_
 * _Redux_
+* _React-Router_
 * _Node.js_
-* Firebase
+* _Firebase_
 * _Jest_
 * _WebPack_
 * _CSS_
@@ -132,6 +142,6 @@ code .
 
 ### License
 
-*This webpage is licensed under the MIT license.*
+<!-- *This webpage is licensed under the MIT license.* -->
 
 Copyright &copy; 2020 **_Fatma C. Dogan_**

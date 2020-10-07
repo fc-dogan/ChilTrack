@@ -51,12 +51,12 @@ function KidDetails(props) {
               {goalsForSelectedKid.map( goal =>{
                 return (
                   <div>
+                    <button onClick={()=> handleDeleteGoal(goal.id)}  className="right">delete</button>
                     <Goals
                       reward={goal.reward}
                       rewardPoint={goal.rewardPoint}
                       kidsPoint = {kid.totalPoint}
                       key={goal.id} />
-                    <button onClick={()=> handleDeleteGoal(goal.id)} >delete</button>
                   </div>
                     )
                 })}

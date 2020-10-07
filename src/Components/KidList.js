@@ -20,15 +20,19 @@ function KidList(props) {
     return (
       <React.Fragment>
         <hr/>
-        {kidsBelongToParent.map((kid) => {
-          console.log(kid.parentId)
-          return <Kid
-            name={kid.name}
-            totalPoint={kid.totalPoint}
-            goals={kid.goals}
-            id={kid.id}
-            key={kid.id}/>
-        })}
+        <div className="row">
+          
+            {kidsBelongToParent.map((kid) => {
+              console.log(kid.parentId)
+              return <Kid
+                name={kid.name}
+                totalPoint={kid.totalPoint}
+                goals={kid.goals}
+                id={kid.id}
+                key={kid.id}/>
+            })}
+          
+        </div>
       </React.Fragment>
     );
   } else {

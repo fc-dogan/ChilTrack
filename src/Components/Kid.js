@@ -23,15 +23,16 @@ function Kid(props) {
   }
     return (
       <React.Fragment>  
+        <div className="col s12 m6">
            <div className="card deep-orange lighten-5">
-            <div className="card-content ">
+            <div className="card-title ">
               <Link to={{
                 pathname:`/details/${id}`,
                 props: { id: id}
                 }} key={id}>  
                   <div className="card-panel hoverable">
                     <h4 >{name} </h4>
-                    <a class="btn deep-purple lighten-1 right">{name}'s goals</a>
+                    <a className="btn deep-purple lighten-1 right">{name}'s goals</a>
                     <p>Total Point: <em>{totalPoint}</em></p>
                   </div>
               </Link>
@@ -56,6 +57,7 @@ function Kid(props) {
               </div>
             </div>
           </div>
+        </div>
       </React.Fragment>
     ) 
 }

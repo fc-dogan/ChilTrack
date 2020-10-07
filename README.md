@@ -24,15 +24,16 @@ _An application for parents who can track their kids’ behavior, daily progress
 * User(parent) registration (database storage)
 * User sign in and sign out (database authentication)
 * Capability create a child profile
-* Capability update(manage) child profile
+<!-- * Capability update(manage) child profile -->
 * Capability create reward
 * Capability see set rewards
-* Capability update rewards
+<!-- * Capability update rewards -->
 * Capability delete selected reward
 * Capability increase total behavior points
 * Capability decrease total behavior points
 * Capability see total behavior points
 * Capability to set up multiple children to their account
+* Capability see available rewards to spend
 
 
 ## Setup/Installation Requirements

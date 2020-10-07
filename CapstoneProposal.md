@@ -16,10 +16,8 @@ Users will have a list of good and bad behavior that are factors to reach the re
 * User(parent) registration (database storage)
 * User sign in and sign out (database authentication)
 *  Capability create a child profile
-* Capability update(manage) child profile
 *  Capability create reward
 * Capability see set rewards
-*  Capability update rewards
 *  Capability delete selected reward
 *  Capability increase total behavior points
 * Capability decrease total behavior points
@@ -35,6 +33,9 @@ Users will have a list of good and bad behavior that are factors to reach the re
 
 ### Additional Features
 
+* Capability update(manage) child profile
+*  Capability update rewards
+*  Capability get notified when the child reaches the reward point 
 *  Capability creates new behavior reason.
 *  Capability update behavior reason
 *  Capability upload their kids' images to the account
@@ -46,4 +47,4 @@ Users will have a list of good and bad behavior that are factors to reach the re
 ### Tools for Additional Features
 
 * React Native
-* Canvas.js
+* Chart.js

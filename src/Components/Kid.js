@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import PropTypes from "prop-types";
-import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import GoodBehaviorList from './BehaviorList/GoodBehaviorList'
@@ -24,7 +23,7 @@ function Kid(props) {
   }
     return (
       <React.Fragment>  
-           <div className="card deep-orange  lighten-5">
+           <div className="card deep-orange lighten-5">
             <div className="card-content ">
               <Link to={{
                 pathname:`/details/${id}`,
@@ -32,6 +31,7 @@ function Kid(props) {
                 }} key={id}>  
                   <div className="card-panel hoverable">
                     <h4 >{name} </h4>
+                    <a class="btn deep-purple lighten-1 right">{name}'s goals</a>
                     <p>Total Point: <em>{totalPoint}</em></p>
                   </div>
               </Link>

@@ -26,11 +26,11 @@ function CreateNewGoal(props) {
     <form >
       <h5 className="grey-text text-darken-3">Add a new Goal</h5>
       <div className="input-field">
-        <input type="text" name='reward' />
+        <input type="text" name='reward' required/>
         <label htmlFor="reward">What is the reward for this goal?</label>
       </div>
       <div className="input-field">
-        <input type="text" name='rewardPoint' />
+        <input type="text" name='rewardPoint' required/>
         <label htmlFor="rewardPoint">How many points?</label>
       </div>
       <div className="input-field">

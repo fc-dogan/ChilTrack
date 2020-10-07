@@ -26,7 +26,7 @@ function CreateNewKidProfile() {
     <form className="white" onSubmit={addKidToFirestore}>
       <h5 className="grey-text text-darken-3">Add a new Kid Profile</h5>
       <div className="input-field">
-        <input type="text" name='name' />
+        <input type="text" name='name' required/>
         <label htmlFor="name">Name</label>
       </div>
       <div className="input-field">

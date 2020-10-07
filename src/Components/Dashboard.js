@@ -11,9 +11,10 @@ class Dashboard extends React.Component {
     if (!auth.uid) return <Redirect to='/signin' /> 
     return (
       <div className="dashboard container">
-        <h2>My Kids</h2>
+        <h3 className="container center-align">My Kids</h3>
+        <Link to='/create' className="btn-floating waves-effect waves-light red"><i className="material-icons">add</i>New Kid</Link>
+        
         <KidList parentId={auth.uid} />
-        <Link to='/create'> + New Kid</Link>
     </div>
     )
   }

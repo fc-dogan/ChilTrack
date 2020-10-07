@@ -135,6 +135,7 @@ code .
 * _React-Router_
 * _Node.js_
 * _Firebase_
+* _Materialize_
 * _Jest_
 * _WebPack_
 * _CSS_

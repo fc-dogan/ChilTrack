@@ -4,6 +4,10 @@ import { useDispatch } from 'react-redux'
 import * as a from './../actions';
 import { useHistory } from 'react-router-dom';
 import M from "materialize-css";
+import a1 from './../assets/avatars/a1.png'
+import a2 from './../assets/avatars/a2.png'
+import a3 from './../assets/avatars/a3.png'
+
 // import one from './../assets/avatars/one.png'
 
 function CreateNewKidProfile() {
@@ -15,6 +19,11 @@ function CreateNewKidProfile() {
     // Auto initialize all the things!
     M.FormSelect.init(selects, {});
 })
+
+const imageList=[a1, a2, a3]
+const generateImage =() =>{
+  return Math.floor(Math.random() * imageList.length);
+}
   
   function addKidToFirestore(event){
     event.preventDefault();
@@ -22,7 +31,7 @@ function CreateNewKidProfile() {
     dispatch(a.createNewKid(
       {
         name: event.target.name.value,
-        // image: event.target.icons.value,
+        image: generateImage(),
         totalPoint: 0,
         createdTime: firestore.FieldValue.serverTimestamp()
       }

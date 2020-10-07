@@ -11,7 +11,7 @@ import a2 from './../assets/avatars/a2.png'
 import a3 from './../assets/avatars/a3.png'
 
 function Kid(props) {
- const { name, totalPoint, id } = props;
+ const { name, totalPoint, id, image } = props;
   useEffect(() => {
       // Auto initialize all the things!
     M.AutoInit();
@@ -25,10 +25,7 @@ function Kid(props) {
     dispatch(a.decrementKidsPoints(id, 1))
   }
 
-    const imageList=[a1, a2, a3]
-    const generateImage =() =>{
-      return imageList[Math.floor(Math.random() * imageList.length)];
-    }
+  const imageList=[a1, a2, a3]
 
     return (
       <React.Fragment>  
@@ -44,7 +41,7 @@ function Kid(props) {
                 }} key={id}>  
                { console.log(props.image)}
                   <div className="card-panel hoverable">
-                    <img className=" circle responsive-img" src={generateImage()}  style={{ height:"100px" }}></img>
+                    <img className=" circle responsive-img" src={imageList[image]}  style={{ height:"100px" }}></img>
                     {/* <img class="profile-pic" src={image} /> */}
                     <p>Total Point: <em>{totalPoint}</em></p>
                     <a className="btn deep-purple lighten-1 right">{name}'s goals</a>

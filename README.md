@@ -8,26 +8,25 @@
 
 _An application for parents who can track their kids’ behavior, daily progress, and set a goal(reward) to motivate them_
 
+<img src="img/create-kid-profile1.gif" width="250px"/>
 
 ### Component Diagram
 
-<img src="assets/diagram.png" width="550px" />
+<img src="img/diagram.png" width="550px" />
 
 ## Specification user stories:
 
 ## Wireframes
 
-<img src="assets/wireframe.jpg" width="550px" />
+<img src="img/wireframe.jpg" width="550px" />
 
 ##### Minimum Viable Product
 
 * User(parent) registration (database storage)
 * User sign in and sign out (database authentication)
 * Capability create a child profile
-<!-- * Capability update(manage) child profile -->
 * Capability create reward
 * Capability see set rewards
-<!-- * Capability update rewards -->
 * Capability delete selected reward
 * Capability increase total behavior points
 * Capability decrease total behavior points

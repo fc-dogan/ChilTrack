@@ -28,6 +28,9 @@ function KidDetails(props) {
     dispatch(a.decrementKidsPoints(kidId, rewardPoint));
     firestore.delete({collection: 'goals', doc: GoalId });
   }
+  const handleDeleteGoal = (GoalId) =>{
+    firestore.delete({collection: 'goals', doc: GoalId });
+  }
 
   let goalsForSelectedKid;
   let availableRewards;
@@ -47,11 +50,15 @@ function KidDetails(props) {
               <h5 className="card-panel indigo lighten-5">Goals:</h5>
               {goalsForSelectedKid.map( goal =>{
                 return (
-                  <Goals
-                    reward={goal.reward}
-                    rewardPoint={goal.rewardPoint}
-                    kidsPoint = {kid.totalPoint}
-                    key={goal.id} />)
+                  <div>
+                    <Goals
+                      reward={goal.reward}
+                      rewardPoint={goal.rewardPoint}
+                      kidsPoint = {kid.totalPoint}
+                      key={goal.id} />
+                    <button onClick={()=> handleDeleteGoal(goal.id)} >delete</button>
+                  </div>
+                    )
                 })}
             </div>
             <div className="col s12 m6">

@@ -36,9 +36,9 @@ function Kid(props) {
                 pathname:`/details/${id}`,
                 props: { id: id}
                 }} key={id}>  
-                
+               { console.log(props.image)}
                   <div className="card-panel hoverable">
-                    <a></a><img className="responsive-img" src={one}></img>
+                    <img className="responsive-img" src={props.image}></img>
                     {/* <img class="profile-pic" src={image} /> */}
                     <p>Total Point: <em>{totalPoint}</em></p>
                     <a className="btn deep-purple lighten-1 right">{name}'s goals</a>

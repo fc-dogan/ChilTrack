@@ -1,13 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useFirestore } from 'react-redux-firebase';
 import { useDispatch } from 'react-redux'
 import * as a from './../actions';
 import { useHistory } from 'react-router-dom';
+import M from "materialize-css";
+// import one from './../assets/avatars/one.png'
 
 function CreateNewKidProfile() {
   const history = useHistory()
   const firestore = useFirestore();
   const dispatch = useDispatch();
+  useEffect(() => {
+    let selects = document.querySelectorAll('select');
+    // Auto initialize all the things!
+    M.FormSelect.init(selects, {});
+})
   
   function addKidToFirestore(event){
     event.preventDefault();
@@ -15,7 +22,7 @@ function CreateNewKidProfile() {
     dispatch(a.createNewKid(
       {
         name: event.target.name.value,
-        image: event.target.image.value,
+        // image: event.target.icons.value,
         totalPoint: 0,
         createdTime: firestore.FieldValue.serverTimestamp()
       }
@@ -27,13 +34,28 @@ function CreateNewKidProfile() {
     <div className="container">
     <form className="white" onSubmit={addKidToFirestore} >
       <h5 className="grey-text text-darken-3">Add a new Kid Profile</h5>
+      {/* <div class="input-field">
+        <select class="icons" name="icons">
+          <option value="" disabled selected>Choose your option</option>
+          <option value="one.png" data-icon="./../assets/avatars/one.png" class="left"> 1</option>
+          <option value="" data-icon="./../assets/avatars/2.png" class="left">example 2</option>
+          <option value="" data-icon="" class="left">example 3</option>
+        </select>
+        <label>Images in select</label>
+      </div> */}
       <div className="input-field">
         <input type="text" name='name' required/>
         <label htmlFor="name">Name</label>
       </div>
-      {/* <img class="profile-pic" src="http://cdn.cutestpaw.com/wp-content/uploads/2012/07/l-Wittle-puppy-yawning.jpg" /> */}
-      <div class="upload-button">Upload Image</div>
-        <input class="file-upload" type="file"  name='image'/>
+      {/* <div class="input-field ">
+        <select>
+          <option value="" disabled selected>Choose your option</option>
+          <option value="1"><img className="responsive-img" src={one}></img></option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+        <label>Materialize Select</label>
+      </div> */}
       <div className="input-field">
         <button className="btn pink lighten-1">Create</button>
       </div>

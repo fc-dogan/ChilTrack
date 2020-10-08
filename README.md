@@ -23,7 +23,6 @@ Users will have a list of good and bad behavior that are factors to reach the re
 
 <img src="img/diagram.png" width="550px" />
 
-## Specification user stories:
 
 ## Wireframes
 

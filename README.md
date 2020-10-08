@@ -1,6 +1,6 @@
 # _Chiltrack_
 
-#### _A React Redux application for parents to track thir kids' daily progress._ 
+#### _A React Redux application for parents to track their kids' daily progress._ 
 
 #### _October, 2020 | Fatma C. Dogan_
 

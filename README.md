@@ -8,6 +8,8 @@
 
 _An application for parents who can track their kids’ behavior, daily progress, and set a goal(reward) to motivate them_
 
+### [View the live site](https://childtrack-b1767.web.app/)
+
 <details>
 <summary><strong> Use Case</strong> </summary>
 

@@ -8,7 +8,9 @@
 
 _An application for parents who can track their kids’ behavior, daily progress, and set a goal(reward) to motivate them_
 
-### [View the live site](https://childtrack-b1767.web.app/)
+### View the live site at: https://childtrack-b1767.web.app/
+#### or scan QRcode to view live site on your mobile device
+<img src="img/frame.png" width="100" />
 
 <details>
 <summary><strong> Use Case</strong> </summary>
